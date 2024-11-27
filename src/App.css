@@ -1,38 +1,49 @@
-.App {
-  text-align: center;
+* {
+  font-family: sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background-color: #eaeaec;
+  color: #333;
+  line-height: 1.6;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+nav {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between; /* Align logo and links properly */
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 15px 30px;
+  background-color: rgb(227, 227, 217);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: flex;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
 }
 
-.App-link {
-  color: #61dafb;
+nav .logo-container {
+  display: flex;
+  align-items: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+nav .logo {
+  width: 300px; /* Adjust size as needed */
+  height: auto;
 }
+
+nav a {
+  color: #000000;
+  text-decoration: none;
+  font-size: 20px;
+  margin-left: 100px; /* Add spacing between links */
+}
+
+nav a:hover {
+  color: #3bd198; /* Hover effect for links */
+}
+
