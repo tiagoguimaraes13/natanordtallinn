@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { Palette, Users, Sparkles } from 'lucide-react';
 import { Hero } from '../Hero/Hero';
-import backgroundVideo3 from '../../assets/background-video3.mp4';
+import backgroundVideo3 from '../../assets/background-video6.mp4';
 import backgroundVideo4 from '../../assets/background-video4.mp4';
 import backgroundVideo5 from '../../assets/background-video5.mp4';
 import './HomePage.css';
@@ -16,7 +16,7 @@ export const HomePage = () => {
       icon: <Palette size={32} />,
       title: "Innovative Art",
       description: "Experience pieces that push the boundaries of creativity.",
-      video: backgroundVideo3
+      video: backgroundVideo6
     },
     {
       icon: <Sparkles size={32} />,
