@@ -85,7 +85,7 @@ export const HomePage = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              Discover Our Art
+              About Us
               <ArrowRight className="button-icon" />
             </motion.button>
           </div>
