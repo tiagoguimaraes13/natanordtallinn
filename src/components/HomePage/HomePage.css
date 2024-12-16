@@ -1,0 +1,261 @@
+/* Base Layout */
+.homepage {
+  min-height: 100vh;
+  background-color: #ffffff;
+  padding-top: var(--navbar-height, 70px);
+}
+
+.homepage-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+/* Discover Section */
+.discover-section {
+  position: relative;
+  text-align: center;
+  margin: 4rem 0;
+  padding: 6rem 2rem;
+  overflow: hidden;
+  isolation: isolate;
+  border-radius: 60px;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.discover-video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.discover-background-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.discover-content {
+  position: relative;
+  z-index: 1;
+}
+
+.discover-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: rgba(5, 6, 7, 0.8);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+}
+
+.discover-button:hover {
+  color: #000000;
+  transform: translateY(-2px);
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.button-icon {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.3s ease;
+}
+
+.discover-button:hover .button-icon {
+  transform: translateX(4px);
+}
+
+/* Features Section */
+.features-section {
+  padding: 6rem 0;
+}
+
+.features-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 4rem;
+  color: #1a1a1a;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+}
+
+.feature-card {
+  position: relative;
+  min-height: 350px;
+  padding: 2rem;
+  border-radius: 30px;
+  text-align: center;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.feature-video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.feature-background-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.feature-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  padding: 2rem;
+}
+
+.feature-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70px;
+  height: 70px;
+  margin-bottom: 2rem;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  color: #ffffff;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+}
+
+.feature-card:hover .feature-icon {
+  transform: scale(1.1) rotate(5deg);
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.feature-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.feature-card p {
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.7;
+  font-size: 1rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Loading States */
+.video-loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: #fff;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .feature-card {
+    min-height: 300px;
+  }
+
+  .discover-section {
+    height: 350px;
+    border-radius: 40px;
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .discover-section {
+    height: 300px;
+    border-radius: 30px;
+  }
+
+  .feature-card {
+    min-height: 250px;
+  }
+
+  .discover-button {
+    width: 100%;
+    max-width: 280px;
+    padding: 0.875rem 2rem;
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .discover-video-background,
+  .feature-video-background {
+    display: none;
+  }
+
+  .feature-card,
+  .discover-button,
+  .feature-icon {
+    transition: none;
+  }
+
+  .feature-card:hover {
+    transform: none;
+  }
+}

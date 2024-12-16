@@ -1,49 +1,203 @@
-* {
-  font-family: sans-serif;
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+/* CSS Variables */
+:root {
+  --primary: #b19b75;
+  --primary-light: rgba(177, 155, 117, 0.1);
+  --primary-dark: #9a855f;
+  --white: #ffffff;
+  --gray: #666666;
+  --black: #121212;
+  --navbar-height: 70px; /* Add navbar height variable */
+  --container-width: 1200px;
 }
 
-body {
-  font-family: "Segoe UI", Arial, sans-serif;
-  background-color: #eaeaec;
-  color: #333;
-  line-height: 1.6;
-}
-
-nav {
+/* Base Layout */
+.app-container {
+  min-height: 100vh;
+  background: var(--white);
+  padding-top: var(--navbar-height); /* Add padding for navbar */
   display: flex;
-  justify-content: space-between; /* Align logo and links properly */
-  align-items: center;
-  padding: 15px 30px;
-  background-color: rgb(227, 227, 217);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  position: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+  width: 100%;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 2rem;
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Progress Bar - Above Navbar */
+.progress-bar {
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1000;
+  height: 3px;
+  background: var(--primary);
+  transform-origin: 0%;
+  z-index: 1100; /* Above navbar */
 }
 
-nav .logo-container {
+/* Navigation Actions */
+.nav-actions {
   display: flex;
   align-items: center;
+  gap: 1rem;
 }
 
-nav .logo {
-  width: 300px; /* Adjust size as needed */
-  height: auto;
+.cart-icon-container,
+.favorites-icon {
+  position: relative;
+  padding: 0.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: var(--black);
 }
 
-nav a {
-  color: #000000;
+.cart-icon-container:hover,
+.favorites-icon:hover {
+  color: var(--primary);
+  background: var(--primary-light);
+}
+
+/* Badges */
+.cart-badge,
+.favorites-badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background: var(--primary);
+  color: var(--white);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+/* Notifications */
+.notifications-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 1030;
+  pointer-events: none; /* Allow clicking through container */
+}
+
+.notification {
+  background: var(--white);
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  min-width: 300px;
+  pointer-events: auto; /* Enable clicking on notification */
+  animation: slideIn 0.3s ease-out;
+}
+
+.notification-content {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.notification-image {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.notification-text {
+  flex: 1;
+  color: var(--black);
+}
+
+.notification-action {
+  color: var(--primary);
   text-decoration: none;
-  font-size: 20px;
-  margin-left: 100px; /* Add spacing between links */
+  font-weight: 500;
+  cursor: pointer;
 }
 
-nav a:hover {
-  color: #3bd198; /* Hover effect for links */
+/* Scroll Top Button */
+.scroll-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--primary);
+  color: var(--white);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(177, 155, 117, 0.2);
+  z-index: 1020;
+  transition: transform 0.3s ease;
 }
 
+.scroll-top:hover {
+  transform: translateY(-2px);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  :root {
+    --navbar-height: 60px; /* Smaller navbar on mobile */
+  }
+
+  .main-content {
+    padding: 1rem;
+  }
+
+  .notification {
+    min-width: calc(100vw - 40px);
+    margin: 0 20px;
+  }
+}
+
+/* Utility Classes */
+.container {
+  width: 100%;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 1rem;
+}

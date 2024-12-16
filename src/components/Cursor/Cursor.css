@@ -1,0 +1,73 @@
+/* Hide default cursor */
+body {
+    cursor: none !important;
+  }
+  
+  /* Ensure clickable elements don't show default cursor */
+  a, button, input, select, textarea, [role="button"] {
+    cursor: none !important;
+  }
+  
+  .cursor-dot {
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 8px;
+    height: 8px;
+    background-color: #000;
+    border-radius: 50%;
+    z-index: 9999;
+    transition: opacity 0.3s ease-in-out, transform 0.2s ease-in-out;
+  }
+  
+  .cursor-ring {
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 32px;
+    height: 32px;
+    border: 2px solid rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    z-index: 9998;
+    transition: opacity 0.3s ease-in-out, transform 0.2s ease-in-out;
+  }
+  
+  /* Pointer state */
+  .cursor-dot.pointer {
+    background-color: #666;
+    transform: scale(1.2);
+  }
+  
+  .cursor-ring.pointer {
+    border-color: rgba(102, 102, 102, 0.5);
+    transform: scale(1.4);
+  }
+  
+  /* Clicking state */
+  .cursor-dot.clicking {
+    transform: scale(0.8);
+    background-color: #333;
+  }
+  
+  .cursor-ring.clicking {
+    transform: scale(1.2);
+    border-color: rgba(51, 51, 51, 0.5);
+  }
+  
+  /* Mobile and touch devices */
+  @media (hover: none) and (pointer: coarse) {
+    .cursor-dot,
+    .cursor-ring {
+      display: none;
+    }
+    
+    body {
+      cursor: auto !important;
+    }
+    
+    a, button, input, select, textarea, [role="button"] {
+      cursor: auto !important;
+    }
+  }
