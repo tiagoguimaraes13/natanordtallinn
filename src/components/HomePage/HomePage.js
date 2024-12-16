@@ -16,7 +16,7 @@ export const HomePage = () => {
       icon: <Palette size={32} />,
       title: "Innovative Art",
       description: "Experience pieces that push the boundaries of creativity.",
-      video: backgroundVideo6
+      video: backgroundVideo3
     },
     {
       icon: <Sparkles size={32} />,
