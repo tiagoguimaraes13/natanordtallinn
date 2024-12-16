@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";  // Remove useEffect if not used
 import { Routes, Route, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 

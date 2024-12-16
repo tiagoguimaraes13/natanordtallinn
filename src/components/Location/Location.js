@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { MapPin, Clock, Phone, Mail, ExternalLink } from 'lucide-react';
+import { MapPin, Clock, Phone, ExternalLink } from 'lucide-react';
 import './Location.css';
 
 export const Location = () => {
