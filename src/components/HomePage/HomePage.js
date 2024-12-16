@@ -1,9 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
-import { ArrowRight, Palette, Users, Sparkles } from 'lucide-react';
+import { Palette, Users, Sparkles } from 'lucide-react';
 import { Hero } from '../Hero/Hero';
-import backgroundVideo2 from '../../assets/background-video2.mp4';
 import backgroundVideo3 from '../../assets/background-video3.mp4';
 import backgroundVideo4 from '../../assets/background-video4.mp4';
 import backgroundVideo5 from '../../assets/background-video5.mp4';
@@ -65,31 +64,6 @@ export const HomePage = () => {
         animate="visible"
         variants={containerVariants}
       >
-        <motion.section className="discover-section" variants={itemVariants}>
-          <div className="discover-video-background">
-            <video
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="discover-background-video"
-            >
-              <source src={backgroundVideo2} type="video/mp4" />
-            </video>
-            <div className="discover-video-overlay"></div>
-          </div>
-          <div className="discover-content">
-            <motion.button
-              className="discover-button"
-              onClick={() => navigate('/ourart')}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              About Us
-              <ArrowRight className="button-icon" />
-            </motion.button>
-          </div>
-        </motion.section>
 
         <motion.section className="features-section" variants={itemVariants}>
           <h2>Why Choose Us?</h2>
