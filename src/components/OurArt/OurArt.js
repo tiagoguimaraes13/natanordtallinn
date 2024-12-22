@@ -2,24 +2,72 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ShoppingCart, Heart, ZoomIn, X } from 'lucide-react';
 import './OurArt.css';
+import eyeImage from '../../assets/eye3.jpg';
+import splashImage from '../../assets/splash3.jpg';
+import freedoomImage from '../../assets/freedoom2.png';
+import UFOImage from '../../assets/ufo2.jpg';
+import galaxyImage from '../../assets/galaxy2.jpg';
+import goldenImage from '../../assets/golden.jpg';
 
 export const OurArt = ({ addToCart }) => {
   const [selectedArt, setSelectedArt] = useState(null);
-  const [filter, setFilter] = useState('all');
   const [favorites, setFavorites] = useState([]);
 
   const artworks = [
     {
       id: 1,
-      name: 'Galaxy',
-      price: 350,
-      imgSrc: '/api/placeholder/400/400', // Temporarily using placeholder
-      category: 'abstract',
-      description: 'A mesmerizing view of the cosmic dance, captured in vibrant colors and fluid motions.',
+      name: 'The Eye',
+      price: 450,
+      imgSrc: eyeImage,
+      description: 'A mysterious gaze into the depths of imagination, where reality meets the extraordinary in a swirl of enchanting colors.',
       dimensions: '60 x 80 cm',
+      medium: 'Mixed Media on Canvas',
+    },
+    {
+      id: 2,
+      name: 'Splash',
+      price: 380,
+      imgSrc: splashImage,
+      description: 'An explosive celebration of color and movement, capturing the dynamic energy of water in motion.',
+      dimensions: '70 x 90 cm',
       medium: 'Acrylic on Canvas',
     },
-    // ... other artworks
+    {
+      id: 3,
+      name: 'Freedoom',
+      price: 520,
+      imgSrc: freedoomImage,
+      description: 'Breaking free from conventional boundaries, this piece explores the essence of liberation through surreal imagery.',
+      dimensions: '80 x 100 cm',
+      medium: 'Digital Art on Canvas',
+    },
+    {
+      id: 4,
+      name: 'UFO',
+      price: 420,
+      imgSrc: UFOImage,
+      description: 'A cosmic journey into the unknown, blending otherworldly elements with terrestrial landscapes.',
+      dimensions: '65 x 85 cm',
+      medium: 'Mixed Media with Metallic Paint',
+    },
+    {
+      id: 5,
+      name: 'Golden Crack',
+      price: 580,
+      imgSrc: goldenImage,
+      description: 'Inspired by kintsugi, this piece celebrates the beauty of imperfection through golden highlights and bold textures.',
+      dimensions: '90 x 120 cm',
+      medium: 'Acrylic with Gold Leaf',
+    },
+    {
+      id: 6,
+      name: 'Galaxy',
+      price: 490,
+      imgSrc: galaxyImage,
+      description: 'A mesmerizing exploration of cosmic beauty, featuring swirling nebulas and interstellar patterns.',
+      dimensions: '75 x 95 cm',
+      medium: 'Acrylic and Metallic Paint',
+    }
   ];
 
   const containerVariants = {
@@ -48,11 +96,6 @@ export const OurArt = ({ addToCart }) => {
     );
   };
 
-  const filteredArtworks =
-    filter === 'all' ? artworks : artworks.filter((art) => art.category === filter);
-
-  const categories = ['all', 'abstract', 'contemporary', 'surreal'];
-
   return (
     <motion.div 
       className="our-art-container"
@@ -67,23 +110,6 @@ export const OurArt = ({ addToCart }) => {
         >
           Our Collection
         </motion.h1>
-
-        <motion.div 
-          className="filter-container"
-          variants={itemVariants}
-        >
-          {categories.map((cat) => (
-            <motion.button
-              key={cat}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className={`filter-button ${filter === cat ? 'active' : ''}`}
-              onClick={() => setFilter(cat)}
-            >
-              {cat.charAt(0).toUpperCase() + cat.slice(1)}
-            </motion.button>
-          ))}
-        </motion.div>
       </div>
 
       <motion.div 
@@ -92,7 +118,7 @@ export const OurArt = ({ addToCart }) => {
         variants={itemVariants}
       >
         <AnimatePresence mode="wait">
-          {filteredArtworks.map((art) => (
+          {artworks.map((art) => (
             <motion.div
               key={art.id}
               layout
@@ -173,8 +199,9 @@ export const OurArt = ({ addToCart }) => {
               >
                 <X size={24} />
               </motion.button>
-              
-              <img src={selectedArt.imgSrc} alt={selectedArt.name} className="modal-image" />
+              <div className="modal-image-container">
+                <img src={selectedArt.imgSrc} alt={selectedArt.name} className="modal-image" />
+              </div>
               <div className="modal-info">
                 <h2>{selectedArt.name}</h2>
                 <p className="modal-description">{selectedArt.description}</p>
@@ -184,9 +211,6 @@ export const OurArt = ({ addToCart }) => {
                   </p>
                   <p>
                     <strong>Dimensions:</strong> {selectedArt.dimensions}
-                  </p>
-                  <p>
-                    <strong>Category:</strong> {selectedArt.category}
                   </p>
                 </div>
                 <div className="modal-actions">
