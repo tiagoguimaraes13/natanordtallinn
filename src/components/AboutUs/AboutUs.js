@@ -1,6 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import './AboutUs.css';
+import logo2Image from '../../assets/logo2.png';
+
 
 export const AboutUs = () => {
   const containerVariants = {
@@ -49,10 +51,18 @@ export const AboutUs = () => {
       animate="visible"
       variants={containerVariants}
     >
-      <motion.section className="about-hero" variants={itemVariants}>
-        <h1>About OKOA Gallery</h1>
-        <p>Celebrating Contemporary Art in the Heart of Tallinn</p>
-      </motion.section>
+      <motion.section 
+  className="about-hero relative min-h-screen bg-cover bg-center bg-no-repeat" 
+  style={{ backgroundImage: `url(${logo2Image})` }}
+  variants={itemVariants}
+>
+  {/* Optional overlay for better text readability */}
+  <div className="absolute inset-0 bg-black/30" />
+  
+  {/* Content container */}
+  <div className="relative z-10 flex flex-col items-center justify-center h-full text-white p-6">
+  </div>
+</motion.section>
 
       <motion.section className="about-story" variants={itemVariants}>
         <h2>Our Story</h2>
@@ -64,13 +74,16 @@ export const AboutUs = () => {
       </motion.section>
 
       <motion.section className="about-vision" variants={itemVariants}>
-        <h2>Our Vision</h2>
-        <p>
-          We believe in making contemporary art accessible to everyone while supporting emerging 
-          artists and fostering a community of art enthusiasts. Our gallery serves as a platform 
-          for artistic expression and cultural exchange.
-        </p>
-      </motion.section>
+  <div className="vision-content">
+    <h2>Our Vision</h2>
+    <p>
+      We believe in making contemporary art accessible to everyone while supporting emerging 
+      artists and fostering a community of art enthusiasts. Our gallery serves as a platform 
+      for artistic expression and cultural exchange, bringing together diverse perspectives 
+      and innovative ideas in the heart of Tallinn.
+    </p>
+  </div>
+</motion.section>
 
       <motion.section className="team-section" variants={itemVariants}>
         <h2>Our Team</h2>
