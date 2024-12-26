@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   CreditCard,
@@ -15,6 +15,11 @@ import {
 import './Cart.css';
 
 export const Cart = ({ cart, removeFromCart, updateQuantity, total }) => {
+  // Scroll to top when cart opens
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, []);
+
   const [personalInfo, setPersonalInfo] = useState({
     name: '',
     email: '',
