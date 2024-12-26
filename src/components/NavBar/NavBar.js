@@ -5,7 +5,7 @@ import { Menu, X, ShoppingCart } from 'lucide-react';
 import './NavBar.css';
 import Logo from '../../assets/logo.png';
 
-export const NavBar = () => {
+export const NavBar = ({ cartItemCount }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
@@ -41,12 +41,22 @@ export const NavBar = () => {
               {item.label}
             </Link>
           ))}
+          {/* Desktop Cart */}
+          <Link to="/cart" className="cart-icon-container desktop-cart">
+            <ShoppingCart size={24} />
+            {cartItemCount > 0 && (
+              <span className="cart-counter">{cartItemCount}</span>
+            )}
+          </Link>
         </nav>
 
         {/* Mobile Menu Toggle */}
         <div className="nav-buttons">
-          <Link to="/cart" className="cart-icon">
+          <Link to="/cart" className="cart-icon-container mobile-cart">
             <ShoppingCart size={24} />
+            {cartItemCount > 0 && (
+              <span className="cart-counter">{cartItemCount}</span>
+            )}
           </Link>
           <button 
             className="menu-toggle"
@@ -84,6 +94,14 @@ export const NavBar = () => {
                     {item.label}
                   </Link>
                 ))}
+                <Link
+                  to="/cart"
+                  className="nav-item cart-item"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  <ShoppingCart size={20} />
+                  Cart {cartItemCount > 0 && `(${cartItemCount})`}
+                </Link>
               </motion.div>
             </>
           )}

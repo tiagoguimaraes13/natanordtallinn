@@ -1,4 +1,4 @@
-import React, { useState } from "react";  // Remove useEffect if not used
+import React, { useState } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -18,26 +18,54 @@ export const App = () => {
   const location = useLocation();
 
   const addToCart = (art) => {
-    setCart(prev => [...prev, { ...art, id: Date.now() }]);
-    setShowNotification(true);
+    // Check if item already exists in cart
+    const existingItem = cart.find(item => item.id === art.id);
     
+    if (existingItem) {
+      // If item exists, update quantity
+      setCart(cart.map(item =>
+        item.id === art.id
+          ? { ...item, quantity: (item.quantity || 1) + 1 }
+          : item
+      ));
+    } else {
+      // If item doesn't exist, add it with quantity 1
+      setCart(prev => [...prev, { ...art, id: Date.now(), quantity: 1 }]);
+    }
+
+    // Show notification
+    setShowNotification(true);
     setTimeout(() => {
       setShowNotification(false);
     }, 3000);
   };
 
-  const removeFromCart = (index) => {
-    setCart(cart.filter((_, idx) => idx !== index));
+  const removeFromCart = (id) => {
+    setCart(cart.filter(item => item.id !== id));
+  };
+
+  const updateQuantity = (id, newQuantity) => {
+    if (newQuantity < 1) {
+      removeFromCart(id);
+      return;
+    }
+    setCart(cart.map(item =>
+      item.id === id ? { ...item, quantity: newQuantity } : item
+    ));
   };
 
   const calculateTotal = () => {
-    return cart.reduce((sum, item) => sum + item.price, 0);
+    return cart.reduce((sum, item) => sum + (item.price * (item.quantity || 1)), 0);
+  };
+
+  const getTotalItems = () => {
+    return cart.reduce((total, item) => total + (item.quantity || 1), 0);
   };
 
   return (
     <div className="app-container">
       {/* NavBar Component */}
-      <NavBar cartItemCount={cart.length} />
+      <NavBar cartItemCount={getTotalItems()} />
 
       {/* Notification */}
       <AnimatePresence>
@@ -47,8 +75,9 @@ export const App = () => {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
           >
-            Item added to cart
+            Item added to cart successfully!
           </motion.div>
         )}
       </AnimatePresence>
@@ -77,6 +106,7 @@ export const App = () => {
                   <Cart 
                     cart={cart} 
                     removeFromCart={removeFromCart}
+                    updateQuantity={updateQuantity}
                     total={calculateTotal()}
                   />
                 } 
@@ -86,7 +116,6 @@ export const App = () => {
         </AnimatePresence>
       </main>
 
-      {/* Footer */}
       <Footer />
     </div>
   );

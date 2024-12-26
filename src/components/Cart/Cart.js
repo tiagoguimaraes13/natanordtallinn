@@ -8,10 +8,13 @@ import {
   ShoppingCart,
   AlertCircle,
   Check,
+  Minus,
+  Plus,
+  X
 } from 'lucide-react';
 import './Cart.css';
 
-export const Cart = ({ cart, removeFromCart }) => {
+export const Cart = ({ cart, removeFromCart, updateQuantity, total }) => {
   const [personalInfo, setPersonalInfo] = useState({
     name: '',
     email: '',
@@ -68,6 +71,9 @@ export const Cart = ({ cart, removeFromCart }) => {
       if (!creditCardInfo.cvc.trim()) {
         newErrors.cvc = 'CVC is required';
       }
+      if (!creditCardInfo.name.trim()) {
+        newErrors.cardName = 'Card holder name is required';
+      }
     }
 
     setErrors(newErrors);
@@ -120,7 +126,12 @@ export const Cart = ({ cart, removeFromCart }) => {
     }
   };
 
-  const totalAmount = cart.reduce((total, item) => total + item.price, 0);
+  const formatPrice = (price) => {
+    return new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD'
+    }).format(price);
+  };
 
   const containerVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -188,17 +199,57 @@ export const Cart = ({ cart, removeFromCart }) => {
                 </div>
               ) : (
                 <div className="cart-items">
-                  {cart.map((item, idx) => (
+                  {cart.map((item) => (
                     <motion.div
-                      key={idx}
+                      key={item.id}
                       className="cart-item"
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
                       exit={{ opacity: 0, x: 20 }}
                     >
-                      {/* Cart item content */}
+                      <div className="cart-item-image">
+                        <img src={item.image} alt={item.title} />
+                      </div>
+                      <div className="cart-item-details">
+                        <h3>{item.title}</h3>
+                        <p className="cart-item-price">{formatPrice(item.price)}</p>
+                        {item.description && (
+                          <p className="cart-item-description">{item.description}</p>
+                        )}
+                        <div className="quantity-controls">
+                          <motion.button
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{ scale: 0.9 }}
+                            onClick={() => updateQuantity(item.id, (item.quantity || 1) - 1)}
+                          >
+                            <Minus size={16} />
+                          </motion.button>
+                          <span>{item.quantity || 1}</span>
+                          <motion.button
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{ scale: 0.9 }}
+                            onClick={() => updateQuantity(item.id, (item.quantity || 1) + 1)}
+                          >
+                            <Plus size={16} />
+                          </motion.button>
+                        </div>
+                      </div>
+                      <motion.button
+                        className="remove-button"
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.95 }}
+                        onClick={() => removeFromCart(item.id)}
+                      >
+                        <X size={20} />
+                      </motion.button>
                     </motion.div>
                   ))}
+                  <div className="cart-summary">
+                    <div className="summary-row">
+                      <span>Total</span>
+                      <span className="total-amount">{formatPrice(total)}</span>
+                    </div>
+                  </div>
                 </div>
               )}
             </motion.div>
@@ -275,7 +326,76 @@ export const Cart = ({ cart, removeFromCart }) => {
                     variants={containerVariants}
                     className="credit-card-form"
                   >
-                    {/* Credit card form fields */}
+                    <div className="form-group">
+                      <label>Card Number</label>
+                      <input
+                        type="text"
+                        name="number"
+                        value={creditCardInfo.number}
+                        onChange={handleCreditCardChange}
+                        placeholder="1234 5678 9012 3456"
+                        className={errors.cardNumber ? 'error' : ''}
+                      />
+                      {errors.cardNumber && (
+                        <motion.span className="error-message">
+                          <AlertCircle className="error-icon" />
+                          {errors.cardNumber}
+                        </motion.span>
+                      )}
+                    </div>
+                    <div className="form-row">
+                      <div className="form-group">
+                        <label>Expiry Date</label>
+                        <input
+                          type="text"
+                          name="expiry"
+                          value={creditCardInfo.expiry}
+                          onChange={handleCreditCardChange}
+                          placeholder="MM/YY"
+                          className={errors.expiry ? 'error' : ''}
+                        />
+                        {errors.expiry && (
+                          <motion.span className="error-message">
+                            <AlertCircle className="error-icon" />
+                            {errors.expiry}
+                          </motion.span>
+                        )}
+                      </div>
+                      <div className="form-group">
+                        <label>CVC</label>
+                        <input
+                          type="text"
+                          name="cvc"
+                          value={creditCardInfo.cvc}
+                          onChange={handleCreditCardChange}
+                          placeholder="123"
+                          className={errors.cvc ? 'error' : ''}
+                        />
+                        {errors.cvc && (
+                          <motion.span className="error-message">
+                            <AlertCircle className="error-icon" />
+                            {errors.cvc}
+                          </motion.span>
+                        )}
+                      </div>
+                    </div>
+                    <div className="form-group">
+                      <label>Card Holder Name</label>
+                      <input
+                        type="text"
+                        name="name"
+                        value={creditCardInfo.name}
+                        onChange={handleCreditCardChange}
+                        placeholder="John Doe"
+                        className={errors.cardName ? 'error' : ''}
+                      />
+                      {errors.cardName && (
+                        <motion.span className="error-message">
+                          <AlertCircle className="error-icon" />
+                          {errors.cardName}
+                        </motion.span>
+                      )}
+                    </div>
                   </motion.div>
                 )}
               </AnimatePresence>
@@ -325,5 +445,4 @@ export const Cart = ({ cart, removeFromCart }) => {
   );
 };
 
-// Also keep default export for backward compatibility
 export default Cart;
