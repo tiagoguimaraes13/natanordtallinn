@@ -8,6 +8,7 @@ import backgroundVideo4 from '../../assets/background-video4.mp4';
 import backgroundVideo5 from '../../assets/background-video5.mp4';
 import './HomePage.css';
 
+
 export const HomePage = () => {
   const navigate = useNavigate();
 
