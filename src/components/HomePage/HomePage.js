@@ -1,6 +1,5 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { useNavigate } from 'react-router-dom';
 import { Palette, Users, Sparkles } from 'lucide-react';
 import { Hero } from '../Hero/Hero';
 import backgroundVideo3 from '../../assets/background-video6.mp4';
@@ -10,7 +9,6 @@ import './HomePage.css';
 
 
 export const HomePage = () => {
-  const navigate = useNavigate();
 
   const features = [
     {
