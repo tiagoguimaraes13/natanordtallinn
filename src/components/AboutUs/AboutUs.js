@@ -2,7 +2,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import './AboutUs.css';
 import logo2Image from '../../assets/logo.png';
-
+import ProfileImage1 from '../../assets/photo1.png';
+import ProfileImage2 from '../../assets/photo2.png';
 
 export const AboutUs = () => {
   const containerVariants = {
@@ -28,14 +29,16 @@ export const AboutUs = () => {
 
   const teamMembers = [
     {
-      name: "Tiago Guimaraes",
+      name: "Tiago Guimarães",
       role: "Founder & Baker",
-      description: "Passionate portuguese baker in traditional pastry making."
+      description: "Passionate Portuguese baker in traditional pastry making.",
+      image: ProfileImage1
     },
     {
       name: "Sonja Sirkas",
       role: "Co-Founder & Manager",
-      description: "Estonian native with a love for pastries and customer service."
+      description: "Estonian native with a love for pastries and customer service.",
+      image: ProfileImage2
     },
   ];
 
@@ -47,37 +50,35 @@ export const AboutUs = () => {
       variants={containerVariants}
     >
       <motion.section 
-  className="about-hero relative min-h-screen bg-cover bg-center bg-no-repeat" 
-  style={{ backgroundImage: `url(${logo2Image})` }}
-  variants={itemVariants}
->
-  {/* Optional overlay for better text readability */}
-  <div className="absolute inset-0 bg-black/30" />
-  
-  {/* Content container */}
-  <div className="relative z-10 flex flex-col items-center justify-center h-full text-white p-6">
-  </div>
-</motion.section>
+        className="about-hero relative min-h-screen bg-cover bg-center bg-no-repeat" 
+        style={{ backgroundImage: `url(${logo2Image})` }}
+        variants={itemVariants}
+      >
+        <div className="absolute inset-0 bg-black/30" />
+        <div className="relative z-10 flex flex-col items-center justify-center h-full text-white p-6" />
+      </motion.section>
 
       <motion.section className="about-story" variants={itemVariants}>
         <h2>Our Story</h2>
         <p>
-        Nata-Nord Tallinn started in 2025, inspired by a love for baking and a desire to bring the taste of Portugal to Estonia. Founded by a Portuguese native living in Tallinn, it all began with a simple idea: to share the traditional pastel de nata with the local community.
-What began as a small kitchen project quickly grew as more people discovered and loved our pastries. Using a family recipe and fresh ingredients, we bake every nata with care and pride.
-Today, Nata-Nord is a little slice of Portugal in the heart of Tallinn — sharing warm, flaky natas and a passion for good food.
+          Nata-Nord Tallinn started in 2025, inspired by a love for baking and a desire to bring the taste of Portugal to Estonia. Founded by a Portuguese native living in Tallinn, it all began with a simple idea: to share the traditional pastel de nata with the local community.
+          <br /><br />
+          What began as a small kitchen project quickly grew as more people discovered and loved our pastries. Using a family recipe and fresh ingredients, we bake every nata with care and pride.
+          <br /><br />
+          Today, Nata-Nord is a little slice of Portugal in the heart of Tallinn — sharing warm, flaky natas and a passion for good food.
         </p>
       </motion.section>
 
       <motion.section className="about-vision" variants={itemVariants}>
-  <div className="vision-content">
-    <h2>Our Vision</h2>
-    <p>
-    At Nata-Nord Tallinn, we want to share the true taste of Portugal with everyone in Tallinn. We bake fresh, tasty pastéis de nata with care and use the best ingredients.
-
-Our goal is to bring joy and good moments through our pastries and make everyone feel welcome.
-    </p>
-  </div>
-</motion.section>
+        <div className="vision-content">
+          <h2>Our Vision</h2>
+          <p>
+            At Nata-Nord Tallinn, we want to share the true taste of Portugal with everyone in Tallinn. We bake fresh, tasty pastéis de nata with care and use the best ingredients.
+            <br /><br />
+            Our goal is to bring joy and good moments through our pastries and make everyone feel welcome.
+          </p>
+        </div>
+      </motion.section>
 
       <motion.section className="team-section" variants={itemVariants}>
         <h2>Our Team</h2>
@@ -89,7 +90,7 @@ Our goal is to bring joy and good moments through our pastries and make everyone
               variants={itemVariants}
             >
               <div className="member-photo">
-                <img src={`/api/placeholder/150/150`} alt={member.name} />
+                <img src={member.image} alt={member.name} />
               </div>
               <h3>{member.name}</h3>
               <h4>{member.role}</h4>
