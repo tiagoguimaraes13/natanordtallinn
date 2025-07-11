@@ -1,32 +1,31 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Palette, Users, Sparkles } from 'lucide-react';
+import { Coffee, Star, Users } from 'lucide-react'; // Changed icons to bakery-related
 import { Hero } from '../Hero/Hero';
-import backgroundVideo3 from '../../assets/background-video6.mp4';
-import backgroundVideo4 from '../../assets/background-video4.mp4';
-import backgroundVideo5 from '../../assets/background-video5.mp4';
+import backgroundVideo3 from '../../assets/background-video.mov'; // Replace with bakery videos
+import backgroundVideo4 from '../../assets/background-video.mov';
+import backgroundVideo5 from '../../assets/background-video.mov';
 import './HomePage.css';
-
 
 export const HomePage = () => {
 
   const features = [
     {
-      icon: <Palette size={32} />,
-      title: "Innovative Art",
-      description: "Experience pieces that push the boundaries of creativity.",
+      icon: <Coffee size={32} />,
+      title: "Authentic Portuguese Recipe",
+      description: "Handcrafted pastéis de nata made with love and tradition.",
       video: backgroundVideo3
     },
     {
-      icon: <Sparkles size={32} />,
-      title: "Inspiring Space",
-      description: "Immerse yourself in an environment of artistic brilliance.",
+      icon: <Star size={32} />,
+      title: "Warm & Cozy Bakery",
+      description: "Enjoy a welcoming atmosphere perfect for every visit.",
       video: backgroundVideo4
     },
     {
       icon: <Users size={32} />,
-      title: "Creative Community",
-      description: "Connect with like-minded creators and art enthusiasts.",
+      title: "Community Favorite",
+      description: "Join fellow nata lovers in sharing moments and memories.",
       video: backgroundVideo5
     }
   ];
@@ -65,7 +64,7 @@ export const HomePage = () => {
       >
 
         <motion.section className="features-section" variants={itemVariants}>
-          <h2>Why Choose Us?</h2>
+          <h2>Why Choose Nata-Nord Tallinn?</h2>
           <div className="features-grid">
             {features.map((feature, index) => (
               <motion.div

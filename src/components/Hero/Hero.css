@@ -5,10 +5,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 100px;
+  border-radius: 40px; /* softer rounded corners instead of extreme */
   margin-top: -80px;
   margin-bottom: -80px;
   overflow: hidden;
+  background-color: #fff8f0; /* warm cream background */
+  box-shadow: 0 8px 20px rgba(192, 110, 53, 0.25);
 }
 
 .video-background {
@@ -18,6 +20,8 @@
   width: 100%;
   height: 100%;
   z-index: 1;
+  border-radius: 40px; /* match container rounding */
+  overflow: hidden;
 }
 
 .background-video {
@@ -29,18 +33,20 @@
   width: auto;
   height: auto;
   transform: translate(-50%, -50%);
-  object-fit: scale-down;
+  object-fit: cover; /* better fill */
+  filter: brightness(0.85) saturate(1.1) sepia(0.2); /* subtle warm tone */
+  transition: transform 0.3s ease;
 }
-
 
 .hero-content {
   position: relative;
   z-index: 3;
   text-align: center;
   padding: 2rem;
-  max-width: 1200px;
+  max-width: 600px;
   margin: 0 auto;
-  color: rgb(0, 0, 0); /* Make text white for better contrast */
+  color: #6b3e1d; /* rich brown for text */
+  text-shadow: 1px 1px 3px rgba(255, 241, 204, 0.7);
 }
 
 .hero-text {
@@ -52,7 +58,8 @@
   font-weight: 700;
   margin-bottom: 1.5rem;
   line-height: 1.2;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  color: #ffffff; /* golden brown */
+  text-shadow: 2px 2px 4px rgba(255, 223, 136, 0.6);
 }
 
 .hero-text p {
@@ -60,7 +67,8 @@
   opacity: 0.9;
   max-width: 600px;
   margin: 0 auto;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  color: #ffffff;
+  text-shadow: 1px 1px 2px rgba(255, 241, 204, 0.7);
 }
 
 .hero-cta {
@@ -74,25 +82,26 @@
   padding: 1rem 2rem;
   font-size: 1.1rem;
   font-weight: 600;
-  color: #ffffff;
-  background-color: #050607;
+  color: #fff8f0; /* creamy white text */
+  background-color: #c06e35; /* pastel de nata golden brown */
   border: none;
   border-radius: 50px;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(162, 63, 146, 0.2);
+  box-shadow: 0 4px 15px rgba(192, 110, 53, 0.4);
 }
 
 .explore-button:hover {
-  color: #000000;
+  color: #c06e35;
+  background-color: #fff8f0;
   transform: translateY(-2px);
-  background-color: #ffffff;
-  box-shadow: 0 6px 20px rgba(0, 123, 255, 0.3);
+  box-shadow: 0 6px 20px rgba(255, 223, 136, 0.5);
 }
 
 .button-icon {
   width: 20px;
   height: 20px;
+  color: #6b3e1d;
 }
 
 .hero-features {
@@ -111,13 +120,15 @@
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  color: #c06e35;
+  text-shadow: 2px 2px 4px rgba(255, 223, 136, 0.6);
 }
 
 .feature-text {
   font-size: 1.1rem;
   opacity: 0.9;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  color: #6b3e1d;
+  text-shadow: 1px 1px 2px rgba(255, 241, 204, 0.7);
 }
 
 @media (max-width: 768px) {

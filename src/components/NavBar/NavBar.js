@@ -11,7 +11,7 @@ export const NavBar = ({ cartItemCount }) => {
 
   const navItems = [
     { path: '/', label: 'Home' },
-    { path: '/ourart', label: 'Our Art' },
+    { path: '/ourart', label: 'Menu' },
     { path: '/aboutus', label: 'About Us' },
     { path: '/location', label: 'Location' },
   ];
@@ -35,13 +35,6 @@ export const NavBar = ({ cartItemCount }) => {
               {item.label}
             </Link>
           ))}
-          {/* Desktop Cart */}
-          <Link to="/cart" className="cart-icon-container desktop-cart">
-            <ShoppingCart size={24} />
-            {cartItemCount > 0 && (
-              <span className="cart-counter">{cartItemCount}</span>
-            )}
-          </Link>
         </nav>
 
         {/* Mobile Menu Toggle */}

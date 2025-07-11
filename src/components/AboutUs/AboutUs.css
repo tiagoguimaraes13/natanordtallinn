@@ -1,26 +1,29 @@
-/* Core sections only - removed unnecessary parts */
+/* Core sections only - colors matched to menu's warm golden palette */
 .about-container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 6rem 2rem 2rem;
-  color: #333;
+  color: #5a3e1b; /* darker brown text */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .about-hero {
   text-align: center;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
   margin-top: -50px;
-  min-height: 60vh;
+  min-height: 30vh;
   position: relative;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-size: cover;
-  background-position: center;
+  background-size: contain;
   background-repeat: no-repeat;
+  background-position: center;
+  height: 50px; /* adjust as needed */
   isolation: isolate;
   border-radius: 20px;
+  background-color: #fff7e6; /* soft cream background */
 }
 
 .about-hero::after {
@@ -31,27 +34,31 @@
 }
 
 /* Story Section - Template for Vision Section */
-.about-story, .about-vision {
+.about-story,
+.about-vision {
   margin-bottom: 5rem;
   padding: 4rem 2rem;
-  background: #ffffff;
+  background: #fff0d1; /* light pastel yellow */
   border-radius: 25px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 10px 30px rgba(198, 143, 57, 0.25);
   text-align: center;
   position: relative;
   overflow: hidden;
 }
 
-.about-story h2, .about-vision h2 {
+.about-story h2,
+.about-vision h2 {
   font-size: 2.5rem;
   font-weight: 700;
-  color: #1a1a1a;
+  color: #c48a2e; /* warm golden brown */
   margin-bottom: 2rem;
   position: relative;
   display: inline-block;
+  text-shadow: 1px 1px 0 #f3dca6;
 }
 
-.about-story h2::after, .about-vision h2::after {
+.about-story h2::after,
+.about-vision h2::after {
   content: '';
   position: absolute;
   bottom: -0.5rem;
@@ -59,14 +66,15 @@
   transform: translateX(-50%);
   width: 60px;
   height: 3px;
-  background: #007bff;
+  background: linear-gradient(45deg, #d69f2d, #b3721a); /* warm gradient underline */
   border-radius: 2px;
 }
 
-.about-story p, .about-vision p {
+.about-story p,
+.about-vision p {
   font-size: 1.1rem;
   line-height: 1.8;
-  color: #4a4a4a;
+  color: #5a3e1b; /* darker brown text */
   max-width: 800px;
   margin: 0 auto;
   padding: 0 1rem;
@@ -74,7 +82,7 @@
 
 /* Vision Section Specific Styles */
 .about-vision {
-  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  background: linear-gradient(135deg, #fff0d1 0%, #fff7e6 100%);
   position: relative;
 }
 
@@ -85,7 +93,7 @@
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(to right, #007bff, #00bcd4);
+  background: linear-gradient(45deg, #d69f2d, #b3721a);
   border-radius: 4px 4px 0 0;
 }
 
@@ -98,10 +106,11 @@
 .team-section h2 {
   font-size: 2.5rem;
   font-weight: 700;
-  color: #1a1a1a;
+  color: #c48a2e;
   margin-bottom: 3rem;
   position: relative;
   display: inline-block;
+  text-shadow: 1px 1px 0 #f3dca6;
 }
 
 .team-grid {
@@ -113,11 +122,12 @@
 
 /* Contact Section */
 .contact-section {
-  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  background: linear-gradient(135deg, #fff7e6, #fff0d1);
   padding: 4rem 2rem;
   border-radius: 20px;
   margin-top: 5rem;
   text-align: center;
+  color: #5a3e1b;
 }
 
 /* Responsive Design */
@@ -126,16 +136,19 @@
     padding: 4rem 1rem 1rem;
   }
 
-  .about-story, .about-vision {
+  .about-story,
+  .about-vision {
     padding: 3rem 1.5rem;
     margin-bottom: 4rem;
   }
 
-  .about-story h2, .about-vision h2 {
+  .about-story h2,
+  .about-vision h2 {
     font-size: 2rem;
   }
 
-  .about-story p, .about-vision p {
+  .about-story p,
+  .about-vision p {
     font-size: 1rem;
     padding: 0 0.5rem;
   }
@@ -144,4 +157,3 @@
     grid-template-columns: 1fr;
   }
 }
-

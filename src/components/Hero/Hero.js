@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import backgroundVideo from '../../assets/background-video.mp4';
+import backgroundVideo from '../../assets/background-video.mov';
 import './Hero.css';
 
 export const Hero = () => {
@@ -51,8 +51,8 @@ export const Hero = () => {
 
       <div className="hero-content">
         <motion.div className="hero-text" variants={itemVariants}>
-          <h1>Discover our Art</h1>
-          <p>Experience unique pieces and dive into the world of OKOA</p>
+          <h1>Welcome to Nata-Nord Tallinn</h1>
+          <p>Where Nordic calm meets Lisbon warmth</p>
         </motion.div>
 
         <motion.div className="hero-cta" variants={itemVariants}>
@@ -62,7 +62,7 @@ export const Hero = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            Explore Collection
+            Order Now
             <ArrowRight className="button-icon" />
           </motion.button>
         </motion.div>

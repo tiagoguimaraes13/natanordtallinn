@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import './AboutUs.css';
-import logo2Image from '../../assets/logo2.png';
+import logo2Image from '../../assets/logo.png';
 
 
 export const AboutUs = () => {
@@ -28,20 +28,15 @@ export const AboutUs = () => {
 
   const teamMembers = [
     {
-      name: "Jane Doe",
-      role: "Founder & Creative Director",
-      description: "With over 15 years of experience in contemporary art."
+      name: "Tiago Guimaraes",
+      role: "Founder & Baker",
+      description: "Passionate portuguese baker in traditional pastry making."
     },
     {
-      name: "John Smith",
-      role: "Lead Curator",
-      description: "Specializing in emerging artists and contemporary movements."
+      name: "Sonja Sirkas",
+      role: "Co-Founder & Manager",
+      description: "Estonian native with a love for pastries and customer service."
     },
-    {
-      name: "Emma Wilson",
-      role: "Art Consultant",
-      description: "Expert in art acquisition and collection management."
-    }
   ];
 
   return (
@@ -67,9 +62,9 @@ export const AboutUs = () => {
       <motion.section className="about-story" variants={itemVariants}>
         <h2>Our Story</h2>
         <p>
-          Founded in 2020, OKOA Gallery has become a cornerstone of Tallinn's contemporary art scene. 
-          Our mission is to bridge the gap between artists and art lovers, creating a space where 
-          creativity flourishes and new perspectives are celebrated.
+        Nata-Nord Tallinn started in 2025, inspired by a love for baking and a desire to bring the taste of Portugal to Estonia. Founded by a Portuguese native living in Tallinn, it all began with a simple idea: to share the traditional pastel de nata with the local community.
+What began as a small kitchen project quickly grew as more people discovered and loved our pastries. Using a family recipe and fresh ingredients, we bake every nata with care and pride.
+Today, Nata-Nord is a little slice of Portugal in the heart of Tallinn — sharing warm, flaky natas and a passion for good food.
         </p>
       </motion.section>
 
@@ -77,10 +72,9 @@ export const AboutUs = () => {
   <div className="vision-content">
     <h2>Our Vision</h2>
     <p>
-      We believe in making contemporary art accessible to everyone while supporting emerging 
-      artists and fostering a community of art enthusiasts. Our gallery serves as a platform 
-      for artistic expression and cultural exchange, bringing together diverse perspectives 
-      and innovative ideas in the heart of Tallinn.
+    At Nata-Nord Tallinn, we want to share the true taste of Portugal with everyone in Tallinn. We bake fresh, tasty pastéis de nata with care and use the best ingredients.
+
+Our goal is to bring joy and good moments through our pastries and make everyone feel welcome.
     </p>
   </div>
 </motion.section>
@@ -106,14 +100,13 @@ export const AboutUs = () => {
       </motion.section>
 
       <motion.section className="contact-section" variants={itemVariants}>
-        <h2>Visit Us</h2>
+        <h2>Make your order</h2>
         <p>
-          Experience our collection in person and join us for regular exhibitions, 
-          artist talks, and cultural events.
+          Experience our collection of fresh Pasteis de Nata, available for order online.
         </p>
         <div className="contact-info">
-          <p>Opening Hours: Monday - Friday: 10:00 - 18:00</p>
-          <p>Weekend: 11:00 - 16:00</p>
+          <p>Opening Hours: Monday - Friday: 10:00 - 20:00</p>
+          <p>Weekend: 10:00 - 18:00</p>
         </div>
       </motion.section>
     </motion.div>

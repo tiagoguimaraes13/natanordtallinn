@@ -1,0 +1,59 @@
+.menu-container {
+  color: #c48a2e;
+  padding: 2rem;
+  max-width: 700px;
+  margin: 0 auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  background: #fff7e6; /* very soft cream */
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(198, 143, 57, 0.2);
+}
+
+.menu-card {
+  background-color: #fff0d1; /* light pastel yellow */
+  border-radius: 16px;
+  padding: 2.5rem;
+  box-shadow: 0 10px 30px rgba(198, 143, 57, 0.25);
+  border: 1px solid #d9b371; /* subtle golden border */
+}
+
+.menu-card h2 {
+  margin-top: 1.5rem;
+  color: #c48a2e; /* warm golden brown */
+  font-weight: 700;
+  font-size: 1.8rem;
+  text-shadow: 1px 1px 0 #f3dca6;
+}
+
+.menu-card ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 1.2rem 0;
+  line-height: 1.8;
+  color: #5a3e1b; /* darker brown for text */
+  font-size: 1.1rem;
+}
+
+.menu-card li {
+  margin-bottom: 0.7rem;
+}
+
+.order-button {
+  margin-top: 30px;
+  padding: 14px 32px;
+  background: linear-gradient(45deg, #d69f2d, #b3721a);
+  color: #fff8e1;
+  border: none;
+  border-radius: 30px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(198, 143, 57, 0.6);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.order-button:hover {
+  background: linear-gradient(45deg, #b3721a, #d69f2d);
+  box-shadow: 0 6px 15px rgba(198, 143, 57, 0.8);
+}

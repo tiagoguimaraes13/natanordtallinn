@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Facebook, Instagram, Twitter, Mail, MapPin, Phone } from 'lucide-react';
+import { Instagram, Mail, MapPin, Phone } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import './Footer.css';
 
@@ -8,10 +8,8 @@ export const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
-    { icon: <Facebook size={20} />, url: 'https://facebook.com', label: 'Facebook' },
-    { icon: <Instagram size={20} />, url: 'https://instagram.com', label: 'Instagram' },
-    { icon: <Twitter size={20} />, url: 'https://twitter.com', label: 'Twitter' },
-    { icon: <Mail size={20} />, url: 'mailto:info@okoa.ee', label: 'Email' },
+    { icon: <Instagram size={20} />, url: 'https://www.instagram.com/natanord.tallinn/', label: 'Instagram' },
+    { icon: <Mail size={20} />, url: 'mailto:natanord.tallinn@gmail.com', label: 'Email' },
   ];
 
   const footerLinks = [
@@ -19,7 +17,7 @@ export const Footer = () => {
       title: 'Navigation',
       links: [
         { name: 'Home', path: '/' },
-        { name: 'Our Art', path: '/ourart' },
+        { name: 'Menu', path: '/ourart' },
         { name: 'About Us', path: '/aboutus' },
         { name: 'Location', path: '/location' },
       ],
@@ -27,9 +25,9 @@ export const Footer = () => {
     {
       title: 'Contact',
       items: [
-        { icon: <Phone size={16} />, text: '+372 123 4567' },
-        { icon: <Mail size={16} />, text: 'info@okoa.ee' },
-        { icon: <MapPin size={16} />, text: 'Narva mnt 1, Tallinn' },
+        { icon: <Phone size={16} />, text: '+372 58349800' },
+        { icon: <Mail size={16} />, text: 'natanord.tallinn@gmail.com' },
+        { icon: <MapPin size={16} />, text: 'Online Shop, Tallinn' },
       ],
     },
     {
@@ -37,7 +35,6 @@ export const Footer = () => {
       links: [
         { name: 'Privacy Policy', path: '/privacy' },
         { name: 'Terms of Service', path: '/terms' },
-        { name: 'Shipping Policy', path: '/shipping' },
         { name: 'Returns', path: '/returns' },
       ],
     },
@@ -47,8 +44,8 @@ export const Footer = () => {
     <footer className="footer">
       <div className="footer-content">
         <div className="footer-brand">
-          <h2>OKOA Gallery</h2>
-          <p>Contemporary Art in the Heart of Tallinn</p>
+          <h2>Nata-Nord Tallinn</h2>
+          <p>Portuguese bakery in the Heart of Tallinn</p>
           <div className="social-links">
             {socialLinks.map((social, index) => (
               <motion.a
@@ -96,7 +93,7 @@ export const Footer = () => {
 
       <div className="footer-bottom">
         <div className="footer-bottom-content">
-          <p>&copy; {currentYear} OKOA Gallery. All rights reserved.</p>
+          <p>&copy; {currentYear} Nata-Nord Tallinn. All rights reserved.</p>
           <p>Built with ❤️ in Estonia</p>
         </div>
       </div>

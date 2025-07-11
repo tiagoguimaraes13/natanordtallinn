@@ -4,9 +4,10 @@
   left: 0;
   width: 100%;
   height: 70px;
-  background-color: white;
+  background-color: #fff8f0; /* soft cream background */
   z-index: 1000;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 6px rgba(192, 110, 53, 0.15); /* warm shadow */
+  border-bottom: 1px solid #e6d3b3; /* subtle warm border */
 }
 
 .navbar-container {
@@ -24,7 +25,7 @@
 }
 
 .logo {
-  height: 40px;
+  height: 90px;
   width: auto;
   object-fit: contain;
 }
@@ -37,14 +38,17 @@
 }
 
 .nav-link {
-  color: #333;
+  color: #6b3e1d; /* rich brown */
   text-decoration: none;
   font-weight: 500;
   padding: 0.5rem 0;
+  transition: color 0.3s ease;
 }
 
+.nav-link:hover,
 .nav-link.active {
-  color: #007bff;
+  color: #c06e35; /* golden brown highlight */
+  text-shadow: 0 0 6px rgba(192, 110, 53, 0.6);
 }
 
 .nav-buttons {
@@ -54,9 +58,14 @@
 }
 
 .cart-icon {
-  color: #333;
+  color: #6b3e1d;
   display: flex;
   align-items: center;
+  transition: color 0.3s ease;
+}
+
+.cart-icon:hover {
+  color: #c06e35;
 }
 
 .menu-toggle {
@@ -66,6 +75,12 @@
   cursor: pointer;
   display: flex;
   align-items: center;
+  color: #6b3e1d;
+  transition: color 0.3s ease;
+}
+
+.menu-toggle:hover {
+  color: #c06e35;
 }
 
 .nav-overlay {
@@ -74,7 +89,7 @@
   left: 0;
   width: 100%;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(192, 110, 53, 0.5); /* warm translucent overlay */
   z-index: 998;
 }
 
@@ -84,19 +99,26 @@
   right: 0;
   width: 300px;
   height: 100vh;
-  background: white;
+  background: #fff8f0; /* warm cream */
   z-index: 999;
   padding: 5rem 2rem 2rem;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  box-shadow: -4px 0 15px rgba(192, 110, 53, 0.15);
 }
 
 .nav-item {
-  color: #333;
+  color: #6b3e1d;
   text-decoration: none;
   font-size: 1.1rem;
   font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-item:hover {
+  color: #c06e35;
+  text-shadow: 0 0 6px rgba(192, 110, 53, 0.6);
 }
 
 @media (max-width: 768px) {
@@ -122,7 +144,7 @@
 
 .cart-icon-container {
   position: relative;
-  color: #333;
+  color: #6b3e1d;
   display: flex;
   align-items: center;
   text-decoration: none;
@@ -132,7 +154,7 @@
   position: absolute;
   top: -8px;
   right: -8px;
-  background-color: #007bff;
+  background-color: #c06e35;
   color: white;
   border-radius: 50%;
   width: 20px;
@@ -142,6 +164,7 @@
   justify-content: center;
   font-size: 12px;
   font-weight: bold;
+  box-shadow: 0 0 6px rgba(192, 110, 53, 0.6);
 }
 
 .cart-item {

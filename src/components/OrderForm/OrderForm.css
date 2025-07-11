@@ -1,0 +1,97 @@
+.order-form-container {
+    max-width: 600px;
+    margin: 2rem auto;
+    background: #fff7e6; /* soft cream background */
+    border-radius: 20px;
+    padding: 2.5rem 3rem;
+    box-shadow: 0 8px 20px rgba(198, 143, 57, 0.2);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #5a3e1b; /* dark brown text */
+  }
+  
+  .order-form-container h1 {
+    color: #c48a2e; /* warm golden brown */
+    font-weight: 700;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    text-shadow: 1px 1px 0 #f3dca6;
+  }
+  
+  .order-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+  
+  .order-form label {
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+    display: block;
+  }
+  
+  .order-form input[type="text"],
+  .order-form input[type="email"],
+  .order-form input[type="number"],
+  .order-form select,
+  .order-form textarea {
+    padding: 10px 15px;
+    border: 1.5px solid #d9b371; /* golden border */
+    border-radius: 10px;
+    font-size: 1rem;
+    font-family: inherit;
+    color: #5a3e1b;
+    background: #fff0d1; /* light pastel yellow */
+    transition: border-color 0.3s ease;
+  }
+  
+  .order-form input[type="text"]:focus,
+  .order-form input[type="email"]:focus,
+  .order-form input[type="number"]:focus,
+  .order-form select:focus,
+  .order-form textarea:focus {
+    outline: none;
+    border-color: #c48a2e; /* golden brown focus */
+    box-shadow: 0 0 8px rgba(196, 138, 46, 0.6);
+    background: #fff7e6;
+  }
+  
+  .order-form textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
+  
+  .order-button {
+    align-self: center;
+    padding: 14px 36px;
+    background: linear-gradient(45deg, #d69f2d, #b3721a);
+    color: #fff8e1;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(198, 143, 57, 0.6);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    margin-top: 1rem;
+    width: fit-content;
+    min-width: 180px;
+  }
+  
+  .order-button:hover {
+    background: linear-gradient(45deg, #b3721a, #d69f2d);
+    box-shadow: 0 6px 15px rgba(198, 143, 57, 0.8);
+  }
+  
+  /* Responsive for smaller screens */
+  @media (max-width: 480px) {
+    .order-form-container {
+      padding: 2rem 1.5rem;
+    }
+  
+    .order-button {
+      width: 100%;
+    }
+  }
+  
