@@ -1,7 +1,7 @@
 import React, { useState} from "react";
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, ShoppingCart } from 'lucide-react';
+import { Menu, X } from 'lucide-react';  // Removed ShoppingCart import
 import './NavBar.css';
 import Logo from '../../assets/logo.png';
 
@@ -39,12 +39,7 @@ export const NavBar = ({ cartItemCount }) => {
 
         {/* Mobile Menu Toggle */}
         <div className="nav-buttons">
-          <Link to="/cart" className="cart-icon-container mobile-cart">
-            <ShoppingCart size={24} />
-            {cartItemCount > 0 && (
-              <span className="cart-counter">{cartItemCount}</span>
-            )}
-          </Link>
+          {/* Removed mobile shopping cart icon here */}
           <button 
             className="menu-toggle"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -81,14 +76,7 @@ export const NavBar = ({ cartItemCount }) => {
                     {item.label}
                   </Link>
                 ))}
-                <Link
-                  to="/cart"
-                  className="nav-item cart-item"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  <ShoppingCart size={20} />
-                  Cart {cartItemCount > 0 && `(${cartItemCount})`}
-                </Link>
+                {/* Removed shopping cart from mobile menu */}
               </motion.div>
             </>
           )}
