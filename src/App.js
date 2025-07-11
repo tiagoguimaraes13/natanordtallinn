@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route, useLocation, Navigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 
 // Import components
@@ -10,7 +10,7 @@ import { Location } from "./components/Location/Location";
 import { AboutUs } from "./components/AboutUs/AboutUs";
 import { Footer } from "./components/Footer/Footer";
 import OrderForm from './components/OrderForm/OrderForm';
-import ScrollToTop from './components/ScrollToTop'; // 👈 Add this
+import ScrollToTop from './components/ScrollToTop';
 import "./App.css";
 
 export const App = () => {
@@ -18,13 +18,9 @@ export const App = () => {
 
   return (
     <div className="app-container">
-      {/* NavBar Component */}
       <NavBar />
-
-      {/* Scroll to top on route change */}
       <ScrollToTop />
 
-      {/* Main Content */}
       <main className="main-content">
         <AnimatePresence mode="wait">
           <motion.div
@@ -36,7 +32,8 @@ export const App = () => {
           >
             <Routes>
               <Route path="/" element={<HomePage />} />
-              <Route path="/Menu" element={<Menu />} />
+              <Route path="/menu" element={<Menu />} />
+              <Route path="/ourart" element={<Navigate to="/menu" replace />} /> {/* Redirect */}
               <Route path="/location" element={<Location />} />
               <Route path="/aboutus" element={<AboutUs />} />
               <Route path="/order" element={<OrderForm />} />
