@@ -35,8 +35,8 @@ const OrderForm = () => {
 
     if (name === 'natas') {
       let n = parseInt(value, 10);
-      if (isNaN(n) || n < 6) n = 6;
-      else if (n > 100) n = 100;
+      if (isNaN(n) || n < 0) n = "";
+      else if (n > 500) n = 500;
       setFormData((prev) => ({ ...prev, [name]: n }));
     } else {
       setFormData((prev) => ({ ...prev, [name]: value }));
@@ -86,12 +86,12 @@ const OrderForm = () => {
         'KCPKWCL1tWAyr6yl0'
       )
       .then(() => {
-        setStatusMessage('Order sent successfully!');
+        setStatusMessage('Order sent successfully! We will contact you soon to confirm your order and schedule the delivery time. ');
         setFormData({
           name: '',
           email: '',
           phone: '',
-          natas: 6,
+          natas: '',
           delivery: 'inside',
           deliveryDay: '',
           preferredTime: '',
@@ -152,7 +152,7 @@ const OrderForm = () => {
           name="natas"
           value={formData.natas}
           min={6}
-          max={100}
+          max={500}
           onChange={handleChange}
           style={{ width: '100%', padding: '8px', margin: '5px 0' }}
         />
