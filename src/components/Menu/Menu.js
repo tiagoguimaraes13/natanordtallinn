@@ -2,9 +2,11 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import './Menu.css'; // Create this for custom styles
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const Menu = () => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   const handleOrderClick = () => {
     navigate('/order');
@@ -17,7 +19,7 @@ const Menu = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        Our Natas Menu
+        {t('menu.title')}
       </motion.h1>
 
       <motion.div 
@@ -26,25 +28,24 @@ const Menu = () => {
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.6, delay: 0.2 }}
       >
-        <h2>Pricing</h2>
+        <h2>{t('menu.pricingTitle')}</h2>
         <ul>
-          <li>📦 <strong>Minimum order:</strong> 6 units</li>
-          <li>🥮 6–10 units: <strong>1.25€ per unit</strong></li>
-          <li>🥮 11+ units: <strong>1.00€ per unit</strong></li>
+          <li>📦 <strong>{t('menu.minOrderLabel')}:</strong> {t('menu.minOrderUnits')}</li>
+          <li>🥮 {t('menu.priceRange1')}: <strong>{t('menu.price1')}</strong></li>
+          <li>🥮 {t('menu.priceRange2')}: <strong>{t('menu.price2')}</strong></li>
         </ul>
 
-        <h2>Delivery</h2>
+        <h2>{t('menu.deliveryTitle')}</h2>
         <ul>
           <li>
-  🚚 Delivery in Tallinn City Center: <strong>2.00€<br />🎉 Free delivery for orders over 20 units.</strong>
-</li>
-          <li>🚚 Delivery outside Tallinn City Center: <strong>5.00€</strong></li>
-          <li> Delivery outside Tallinn City Center for orders over 20 units: <strong>3.00€</strong></li>
-
+            🚚 {t('menu.deliveryCityCenter')}: <strong>{t('menu.deliveryCityCenterPrice')}<br />🎉 {t('menu.freeDeliveryThreshold')}</strong>
+          </li>
+          <li>🚚 {t('menu.deliveryOutside')}: <strong>{t('menu.deliveryOutsidePrice')}</strong></li>
+          <li>{t('menu.deliveryOutsideDiscount')} <strong>{t('menu.deliveryOutsideDiscountPrice')}</strong></li>
         </ul>
 
         <button className="order-button" onClick={handleOrderClick}>
-          Order Online
+          {t('menu.orderButton')}
         </button>
       </motion.div>
     </div>

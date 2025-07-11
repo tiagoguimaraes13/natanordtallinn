@@ -5,27 +5,29 @@ import { Hero } from '../Hero/Hero';
 import backgroundVideo3 from '../../assets/background-video.mov'; // Replace with bakery videos
 import backgroundVideo4 from '../../assets/background-video.mov';
 import backgroundVideo5 from '../../assets/background-video.mov';
+import { useTranslation } from 'react-i18next';
 import './HomePage.css';
 
 export const HomePage = () => {
+  const { t } = useTranslation();
 
   const features = [
     {
       icon: <Coffee size={32} />,
-      title: "Authentic Portuguese Recipe",
-      description: "Handcrafted pastéis de nata made with love and tradition.",
+      title: t('home.features.authenticTitle'),
+      description: t('home.features.authenticDesc'),
       video: backgroundVideo3
     },
     {
       icon: <Star size={32} />,
-      title: "Warm & Cozy Bakery",
-      description: "Enjoy a welcoming atmosphere perfect for every visit.",
+      title: t('home.features.cozyTitle'),
+      description: t('home.features.cozyDesc'),
       video: backgroundVideo4
     },
     {
       icon: <Users size={32} />,
-      title: "Community Favorite",
-      description: "Join fellow nata lovers in sharing moments and memories.",
+      title: t('home.features.communityTitle'),
+      description: t('home.features.communityDesc'),
       video: backgroundVideo5
     }
   ];
@@ -62,9 +64,8 @@ export const HomePage = () => {
         animate="visible"
         variants={containerVariants}
       >
-
         <motion.section className="features-section" variants={itemVariants}>
-          <h2>Why Choose Nata-Nord Tallinn?</h2>
+          <h2>{t('home.features.title')}</h2>
           <div className="features-grid">
             {features.map((feature, index) => (
               <motion.div

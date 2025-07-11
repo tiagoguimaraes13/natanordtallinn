@@ -1,0 +1,119 @@
+
+{
+  "navbar": {
+    "home": "Home",
+    "menu": "Menu",
+    "about": "About Us",
+    "location": "Location",
+    "language": "Language"
+  },
+  "about": {
+    "ourStory": "Our Story",
+    "storyText": "Nata-Nord Tallinn started in 2025, inspired by a love for baking and a desire to bring the taste of Portugal to Estonia. Founded by a Portuguese native living in Tallinn, it all began with a simple idea: to share the traditional pastel de nata with the local community.\n\nWhat began as a small kitchen project quickly grew as more people discovered and loved our pastries. Using a family recipe and fresh ingredients, we bake every nata with care and pride.\n\nToday, Nata-Nord is a little slice of Portugal in the heart of Tallinn — sharing warm, flaky natas and a passion for good food.",
+    "ourVision": "Our Vision",
+    "visionText": "At Nata-Nord Tallinn, we want to share the true taste of Portugal with everyone in Tallinn. We bake fresh, tasty pastéis de nata with care and use the best ingredients.\n\nOur goal is to bring joy and good moments through our pastries and make everyone feel welcome.",
+    "ourTeam": "Our Team",
+    "orderNow": "Make your order",
+    "orderText": "Experience our collection of fresh Pasteis de Nata, available for order online.",
+    "openingHours": "Opening Hours: Monday - Friday: 10:00 - 20:00",
+    "weekendHours": "Weekend: 10:00 - 18:00",
+    "tiagoRole": "Founder & Baker",
+    "tiagoDesc": "Passionate Portuguese baker in traditional pastry making.",
+    "sonjaRole": "Co-Founder & Manager",
+    "sonjaDesc": "Estonian native with a love for pastries and customer service."
+  },
+  "footer": {
+    "brandName": "Nata-Nord Tallinn",
+    "brandDescription": "Portuguese bakery in the Heart of Tallinn",
+    "navigation": "Navigation",
+    "contact": "Contact",
+    "legal": "Legal",
+    "onlineShopLocation": "Online Shop, Tallinn",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "returns": "Returns",
+    "allRightsReserved": "All rights reserved.",
+    "builtWithLove": "Built with ❤️ in Estonia"
+  },
+  "hero": {
+    "welcome": "Welcome to Nata-Nord Tallinn",
+    "tagline": "Where Nordic calm meets Lisbon warmth",
+    "orderNow": "Order Now"
+  },
+  "home": {
+    "features": {
+      "title": "Why Choose Nata-Nord Tallinn?",
+      "authenticTitle": "Authentic Portuguese Recipe",
+      "authenticDesc": "Handcrafted pastéis de nata made with love and tradition.",
+      "cozyTitle": "Warm & Cozy Bakery",
+      "cozyDesc": "Enjoy a welcoming atmosphere perfect for every visit.",
+      "communityTitle": "Community Favorite",
+      "communityDesc": "Join fellow nata lovers in sharing moments and memories."
+    }
+  },
+  "location": {
+    "title": "Our Location",
+    "address": "Online Store",
+    "city": "Tallinn, Estonia",
+    "callPhone": "Call phone number",
+    "sendEmail": "Send email",
+    "instagramProfile": "Instagram profile",
+    "locationLabel": "Location",
+    "locationText": "Online Shop, Tallinn",
+    "openingHours": "Opening Hours",
+    "weekdayHours": "Monday - Friday: 10:00 - 20:00",
+    "weekendHours": "Saturday - Sunday: 10:00 - 18:00",
+    "mapTitle": "Tallinn Map",
+    "viewLargerMap": "View Larger Map",
+    "getDirections": "Get Directions"
+  },
+  "menu": {
+    "title": "Our Natas Menu",
+    "pricingTitle": "Pricing",
+    "minOrderLabel": "Minimum order",
+    "minOrderUnits": "6 units",
+    "priceRange1": "6–10 units",
+    "price1": "1.25€ per unit",
+    "priceRange2": "11+ units",
+    "price2": "1.00€ per unit",
+    "deliveryTitle": "Delivery",
+    "deliveryCityCenter": "Delivery in Tallinn City Center",
+    "deliveryCityCenterPrice": "2.00€",
+    "freeDeliveryThreshold": "Free delivery for orders over 20 units.",
+    "deliveryOutside": "Delivery outside Tallinn City Center",
+    "deliveryOutsidePrice": "5.00€",
+    "deliveryOutsideDiscount": "Delivery outside Tallinn City Center for orders over 20 units",
+    "deliveryOutsideDiscountPrice": "3.00€",
+    "orderButton": "Order Online"
+  },
+  "orderForm": {
+    "labels": {
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone",
+      "natas": "Number of Natas",
+      "min": "min",
+      "deliveryLocation": "Delivery Location",
+      "deliveryDay": "Delivery Day",
+      "preferredTime": "Preferred Time"
+    },
+    "placeholders": {
+      "phone": "Optional",
+      "preferredTime": "e.g., 14:00 - 16:00"
+    },
+    "deliveryOptions": {
+      "inside": "Inside Tallinn",
+      "outside": "Outside Tallinn"
+    },
+    "totalPrice": "Total Price",
+    "buttons": {
+      "sendOrder": "Send Order"
+    },
+    "errors": {
+      "requiredFields": "Please fill out required fields: Name and Email.",
+      "deliveryDetails": "Please specify delivery day and preferred time.",
+      "sendFailed": "Failed to send order. Please try again."
+    },
+    "successMessage": "Order sent successfully! We will contact you soon to confirm your order and schedule the delivery time."
+  }
+}

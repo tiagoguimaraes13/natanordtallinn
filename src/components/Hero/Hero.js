@@ -2,11 +2,13 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import backgroundVideo from '../../assets/background-video.mov';
 import './Hero.css';
 
 export const Hero = () => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -51,8 +53,8 @@ export const Hero = () => {
 
       <div className="hero-content">
         <motion.div className="hero-text" variants={itemVariants}>
-          <h1>Welcome to Nata-Nord Tallinn</h1>
-          <p>Where Nordic calm meets Lisbon warmth</p>
+          <h1>{t('hero.welcome')}</h1>
+          <p>{t('hero.tagline')}</p>
         </motion.div>
 
         <motion.div className="hero-cta" variants={itemVariants}>
@@ -62,7 +64,7 @@ export const Hero = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            Order Now
+            {t('hero.orderNow')}
             <ArrowRight className="button-icon" />
           </motion.button>
         </motion.div>

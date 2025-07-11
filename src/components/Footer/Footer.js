@@ -2,9 +2,11 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Instagram, Mail, MapPin, Phone } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import './Footer.css';
 
 export const Footer = () => {
+  const { t } = useTranslation();
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
@@ -14,28 +16,28 @@ export const Footer = () => {
 
   const footerLinks = [
     {
-      title: 'Navigation',
+      title: t('footer.navigation'),
       links: [
-        { name: 'Home', path: '/' },
-        { name: 'Menu', path: '/ourart' },
-        { name: 'About Us', path: '/aboutus' },
-        { name: 'Location', path: '/location' },
+        { name: t('navbar.home'), path: '/' },
+        { name: t('navbar.menu'), path: '/ourart' },
+        { name: t('navbar.about'), path: '/aboutus' },
+        { name: t('navbar.location'), path: '/location' },
       ],
     },
     {
-      title: 'Contact',
+      title: t('footer.contact'),
       items: [
         { icon: <Phone size={16} />, text: '+372 58349800' },
         { icon: <Mail size={16} />, text: 'natanord.tallinn@gmail.com' },
-        { icon: <MapPin size={16} />, text: 'Online Shop, Tallinn' },
+        { icon: <MapPin size={16} />, text: t('footer.onlineShopLocation') },
       ],
     },
     {
-      title: 'Legal',
+      title: t('footer.legal'),
       links: [
-        { name: 'Privacy Policy', path: '/privacy' },
-        { name: 'Terms of Service', path: '/terms' },
-        { name: 'Returns', path: '/returns' },
+        { name: t('footer.privacyPolicy'), path: '/privacy' },
+        { name: t('footer.termsOfService'), path: '/terms' },
+        { name: t('footer.returns'), path: '/returns' },
       ],
     },
   ];
@@ -44,8 +46,8 @@ export const Footer = () => {
     <footer className="footer">
       <div className="footer-content">
         <div className="footer-brand">
-          <h2>Nata-Nord Tallinn</h2>
-          <p>Portuguese bakery in the Heart of Tallinn</p>
+          <h2>{t('footer.brandName')}</h2>
+          <p>{t('footer.brandDescription')}</p>
           <div className="social-links">
             {socialLinks.map((social, index) => (
               <motion.a
@@ -93,8 +95,10 @@ export const Footer = () => {
 
       <div className="footer-bottom">
         <div className="footer-bottom-content">
-          <p>&copy; {currentYear} Nata-Nord Tallinn. All rights reserved.</p>
-          <p>Built with ❤️ in Estonia</p>
+          <p>
+            &copy; {currentYear} {t('footer.brandName')}. {t('footer.allRightsReserved')}
+          </p>
+          <p>{t('footer.builtWithLove')}</p>
         </div>
       </div>
     </footer>

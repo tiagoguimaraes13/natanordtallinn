@@ -1,22 +1,30 @@
 import React, { useState, useEffect } from 'react';
 import emailjs from '@emailjs/browser';
+import { useTranslation } from 'react-i18next';
 
 const OrderForm = () => {
+  const { t } = useTranslation();
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     phone: '',
     natas: 6,
     delivery: 'inside',
-    deliveryDay: '',        // New field for delivery day
-    preferredTime: '',      // New field for preferred time
+    deliveryDay: '',
+    preferredTime: '',
   });
   const [totalPrice, setTotalPrice] = useState(0);
   const [statusMessage, setStatusMessage] = useState('');
+  const [statusSuccess, setStatusSuccess] = useState(false);
 
   // Calculate total price whenever natas or delivery changes
   useEffect(() => {
     const n = formData.natas;
+    if (!n || n < 6) {
+      setTotalPrice(0);
+      return;
+    }
     let pricePerUnit = n >= 11 ? 1 : 1.25;
 
     let deliveryCost = 0;
@@ -35,7 +43,7 @@ const OrderForm = () => {
 
     if (name === 'natas') {
       let n = parseInt(value, 10);
-      if (isNaN(n) || n < 0) n = "";
+      if (isNaN(n) || n < 6) n = 6;
       else if (n > 500) n = 500;
       setFormData((prev) => ({ ...prev, [name]: n }));
     } else {
@@ -47,12 +55,14 @@ const OrderForm = () => {
     e.preventDefault();
 
     if (!formData.name || !formData.email) {
-      setStatusMessage('Please fill out required fields: Name and Email.');
+      setStatusMessage(t('orderForm.errors.requiredFields'));
+      setStatusSuccess(false);
       return;
     }
 
     if (!formData.deliveryDay || !formData.preferredTime) {
-      setStatusMessage('Please specify delivery day and preferred time.');
+      setStatusMessage(t('orderForm.errors.deliveryDetails'));
+      setStatusSuccess(false);
       return;
     }
 
@@ -86,12 +96,13 @@ const OrderForm = () => {
         'KCPKWCL1tWAyr6yl0'
       )
       .then(() => {
-        setStatusMessage('Order sent successfully! We will contact you soon to confirm your order and schedule the delivery time. ');
+        setStatusMessage(t('orderForm.successMessage'));
+        setStatusSuccess(true);
         setFormData({
           name: '',
           email: '',
           phone: '',
-          natas: '',
+          natas: 6,
           delivery: 'inside',
           deliveryDay: '',
           preferredTime: '',
@@ -100,7 +111,8 @@ const OrderForm = () => {
       })
       .catch((error) => {
         console.error('EmailJS error details:', error);
-        setStatusMessage('Failed to send order. Please try again.');
+        setStatusMessage(t('orderForm.errors.sendFailed'));
+        setStatusSuccess(false);
       });
   };
 
@@ -110,7 +122,7 @@ const OrderForm = () => {
       style={{ maxWidth: '500px', margin: 'auto', fontFamily: 'Arial, sans-serif' }}
     >
       <label>
-        Name*:
+        {t('orderForm.labels.name')}*:
         <input
           type="text"
           name="name"
@@ -122,7 +134,7 @@ const OrderForm = () => {
       </label>
 
       <label>
-        Email*:
+        {t('orderForm.labels.email')}*:
         <input
           type="email"
           name="email"
@@ -134,19 +146,19 @@ const OrderForm = () => {
       </label>
 
       <label>
-        Phone:
+        {t('orderForm.labels.phone')}:
         <input
           type="tel"
           name="phone"
           value={formData.phone}
           onChange={handleChange}
-          placeholder="Optional"
+          placeholder={t('orderForm.placeholders.phone')}
           style={{ width: '100%', padding: '8px', margin: '5px 0' }}
         />
       </label>
 
       <label>
-        Number of Natas* (min 6):
+        {t('orderForm.labels.natas')}* ({t('orderForm.labels.min')} 6):
         <input
           type="number"
           name="natas"
@@ -159,20 +171,20 @@ const OrderForm = () => {
       </label>
 
       <label>
-        Delivery Location*:
+        {t('orderForm.labels.deliveryLocation')}*:
         <select
           name="delivery"
           value={formData.delivery}
           onChange={handleChange}
           style={{ width: '100%', padding: '8px', margin: '5px 0' }}
         >
-          <option value="inside">Inside Tallinn</option>
-          <option value="outside">Outside Tallinn</option>
+          <option value="inside">{t('orderForm.deliveryOptions.inside')}</option>
+          <option value="outside">{t('orderForm.deliveryOptions.outside')}</option>
         </select>
       </label>
 
       <label>
-        Delivery Day*:
+        {t('orderForm.labels.deliveryDay')}*:
         <input
           type="date"
           name="deliveryDay"
@@ -180,24 +192,25 @@ const OrderForm = () => {
           onChange={handleChange}
           required
           style={{ width: '100%', padding: '8px', margin: '5px 0' }}
+          min={new Date().toISOString().split('T')[0]} // delivery date can't be in the past
         />
       </label>
 
       <label>
-        Preferred Time*:
+        {t('orderForm.labels.preferredTime')}*:
         <input
           type="text"
           name="preferredTime"
           value={formData.preferredTime}
           onChange={handleChange}
-          placeholder="e.g., 14:00 - 16:00"
+          placeholder={t('orderForm.placeholders.preferredTime')}
           required
           style={{ width: '100%', padding: '8px', margin: '5px 0' }}
         />
       </label>
 
       <p>
-        <strong>Total Price: €{totalPrice}</strong>
+        <strong>{t('orderForm.totalPrice')}: €{totalPrice}</strong>
       </p>
 
       <button
@@ -215,16 +228,17 @@ const OrderForm = () => {
           width: '100%',
         }}
       >
-        Send Order
+        {t('orderForm.buttons.sendOrder')}
       </button>
 
       {statusMessage && (
         <p
           style={{
             marginTop: '10px',
-            color: statusMessage.includes('successfully') ? 'green' : 'red',
+            color: statusSuccess ? 'green' : 'red',
             fontWeight: '600',
           }}
+          role="alert"
         >
           {statusMessage}
         </p>

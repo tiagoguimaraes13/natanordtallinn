@@ -1,9 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Instagram, Mail, MapPin, Phone } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import './Location.css';
 
 export const Location = () => {
+  const { t } = useTranslation();
+
   const containerVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
@@ -42,10 +45,10 @@ export const Location = () => {
       >
         <div className="location-content">
           <motion.div className="location-info" variants={contentVariants}>
-            <h2>Our Location</h2>
+            <h2>{t('location.title')}</h2>
             <div className="address-details">
-              <p className="address">Online Store</p>
-              <p className="city">Tallinn, Estonia</p>
+              <p className="address">{t('location.address')}</p>
+              <p className="city">{t('location.city')}</p>
               <div className="contact-details">
                 {/* Phone */}
                 <motion.a
@@ -53,7 +56,7 @@ export const Location = () => {
                   className="contact-link"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
-                  aria-label="Call phone number"
+                  aria-label={t('location.callPhone')}
                 >
                   <Phone size={20} />
                   <span>+372 58349800</span>
@@ -65,7 +68,7 @@ export const Location = () => {
                   className="contact-link"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
-                  aria-label="Send email"
+                  aria-label={t('location.sendEmail')}
                 >
                   <Mail size={20} />
                   <span>natanord.tallinn@gmail.com</span>
@@ -79,30 +82,30 @@ export const Location = () => {
                   className="contact-link"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
-                  aria-label="Instagram profile"
+                  aria-label={t('location.instagramProfile')}
                 >
                   <Instagram size={20} />
                   <span>@natanord.tallinn</span>
                 </motion.a>
 
                 {/* Address */}
-                <motion.div className="contact-link" aria-label="Location">
+                <motion.div className="contact-link" aria-label={t('location.locationLabel')}>
                   <MapPin size={20} />
-                  <span>Online Shop, Tallinn</span>
+                  <span>{t('location.locationText')}</span>
                 </motion.div>
               </div>
 
               <div className="hours">
-                <h3>Opening Hours</h3>
-                <p>Monday - Friday: 10:00 - 20:00</p>
-                <p>Saturday - Sunday: 10:00 - 18:00</p>
+                <h3>{t('location.openingHours')}</h3>
+                <p>{t('location.weekdayHours')}</p>
+                <p>{t('location.weekendHours')}</p>
               </div>  
             </div>
           </motion.div>
 
           <motion.div className="map-wrapper" variants={contentVariants}>
             <iframe
-              title="Tallinn Map"
+              title={t('location.mapTitle')}
               className="map-frame"
               src={`https://www.openstreetmap.org/export/embed.html?bbox=${longitude - 0.015},${latitude - 0.015},${longitude + 0.015},${latitude + 0.015}&layer=mapnik&marker=${latitude},${longitude}`}
               frameBorder="0"
@@ -115,7 +118,7 @@ export const Location = () => {
                 rel="noopener noreferrer"
                 className="view-larger"
               >
-                View Larger Map
+                {t('location.viewLargerMap')}
               </a>
               <a 
                 href={`https://www.google.com/maps/dir/?api=1&destination=${latitude},${longitude}`}
@@ -123,7 +126,7 @@ export const Location = () => {
                 rel="noopener noreferrer"
                 className="get-directions"
               >
-                Get Directions
+                {t('location.getDirections')}
               </a>
             </div>
           </motion.div>

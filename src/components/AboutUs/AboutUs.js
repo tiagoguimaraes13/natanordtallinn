@@ -1,11 +1,14 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next'; // 👈 Import
 import './AboutUs.css';
 import logo2Image from '../../assets/logo.png';
 import ProfileImage1 from '../../assets/photo1.png';
 import ProfileImage2 from '../../assets/photo2.png';
 
 export const AboutUs = () => {
+  const { t } = useTranslation(); // 👈 Hook
+
   const containerVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
@@ -30,16 +33,16 @@ export const AboutUs = () => {
   const teamMembers = [
     {
       name: "Tiago Guimarães",
-      role: "Founder & Baker",
-      description: "Passionate Portuguese baker in traditional pastry making.",
+      role: t("about.tiagoRole"),
+      description: t("about.tiagoDesc"),
       image: ProfileImage1
     },
     {
       name: "Sonja Sirkas",
-      role: "Co-Founder & Manager",
-      description: "Estonian native with a love for pastries and customer service.",
+      role: t("about.sonjaRole"),
+      description: t("about.sonjaDesc"),
       image: ProfileImage2
-    },
+    }
   ];
 
   return (
@@ -59,29 +62,19 @@ export const AboutUs = () => {
       </motion.section>
 
       <motion.section className="about-story" variants={itemVariants}>
-        <h2>Our Story</h2>
-        <p>
-          Nata-Nord Tallinn started in 2025, inspired by a love for baking and a desire to bring the taste of Portugal to Estonia. Founded by a Portuguese native living in Tallinn, it all began with a simple idea: to share the traditional pastel de nata with the local community.
-          <br /><br />
-          What began as a small kitchen project quickly grew as more people discovered and loved our pastries. Using a family recipe and fresh ingredients, we bake every nata with care and pride.
-          <br /><br />
-          Today, Nata-Nord is a little slice of Portugal in the heart of Tallinn — sharing warm, flaky natas and a passion for good food.
-        </p>
+        <h2>{t("about.ourStory")}</h2>
+        <p>{t("about.storyText")}</p>
       </motion.section>
 
       <motion.section className="about-vision" variants={itemVariants}>
         <div className="vision-content">
-          <h2>Our Vision</h2>
-          <p>
-            At Nata-Nord Tallinn, we want to share the true taste of Portugal with everyone in Tallinn. We bake fresh, tasty pastéis de nata with care and use the best ingredients.
-            <br /><br />
-            Our goal is to bring joy and good moments through our pastries and make everyone feel welcome.
-          </p>
+          <h2>{t("about.ourVision")}</h2>
+          <p>{t("about.visionText")}</p>
         </div>
       </motion.section>
 
       <motion.section className="team-section" variants={itemVariants}>
-        <h2>Our Team</h2>
+        <h2>{t("about.ourTeam")}</h2>
         <div className="team-grid">
           {teamMembers.map((member, index) => (
             <motion.div 
@@ -101,13 +94,11 @@ export const AboutUs = () => {
       </motion.section>
 
       <motion.section className="contact-section" variants={itemVariants}>
-        <h2>Make your order</h2>
-        <p>
-          Experience our collection of fresh Pasteis de Nata, available for order online.
-        </p>
+        <h2>{t("about.orderNow")}</h2>
+        <p>{t("about.orderText")}</p>
         <div className="contact-info">
-          <p>Opening Hours: Monday - Friday: 10:00 - 20:00</p>
-          <p>Weekend: 10:00 - 18:00</p>
+          <p>{t("about.openingHours")}</p>
+          <p>{t("about.weekendHours")}</p>
         </div>
       </motion.section>
     </motion.div>

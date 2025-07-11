@@ -2,7 +2,8 @@ import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import App from './App';
-import './index.css'; // Add this if you haven't already
+import './index.css';
+import './i18n'; // 👈 Import i18n config
 
 // Error Boundary Component
 class ErrorBoundary extends React.Component {
@@ -16,7 +17,6 @@ class ErrorBoundary extends React.Component {
   }
 
   componentDidCatch(error, errorInfo) {
-    // You can log the error to an error reporting service here
     console.error('Application Error:', error, errorInfo);
   }
 

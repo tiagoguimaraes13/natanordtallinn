@@ -1,21 +1,26 @@
-import React, { useState} from "react";
+import React, { useState } from "react";
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X } from 'lucide-react';  // Removed ShoppingCart import
+import { Menu, X } from 'lucide-react';
+import { useTranslation } from 'react-i18next'; // 👈 Add this
 import './NavBar.css';
 import Logo from '../../assets/logo.png';
 
 export const NavBar = ({ cartItemCount }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
+  const { t, i18n } = useTranslation(); // 👈 Use translation hook
 
   const navItems = [
-    { path: '/', label: 'Home' },
-    { path: '/ourart', label: 'Menu' },
-    { path: '/aboutus', label: 'About Us' },
-    { path: '/location', label: 'Location' },
+    { path: '/', label: t('navbar.home') },
+    { path: '/ourart', label: t('navbar.menu') },
+    { path: '/aboutus', label: t('navbar.about') },
+    { path: '/location', label: t('navbar.location') },
   ];
 
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
+  };
 
   return (
     <header className="navbar">
@@ -35,11 +40,22 @@ export const NavBar = ({ cartItemCount }) => {
               {item.label}
             </Link>
           ))}
+
+          {/* Language Selector */}
+          <select
+            className="language-selector"
+            value={i18n.language}
+            onChange={(e) => changeLanguage(e.target.value)}
+            aria-label={t('navbar.language')}
+          >
+            <option value="en">EN</option>
+            <option value="ee">EE</option>
+            <option value="ru">RU</option>
+          </select>
         </nav>
 
         {/* Mobile Menu Toggle */}
         <div className="nav-buttons">
-          {/* Removed mobile shopping cart icon here */}
           <button 
             className="menu-toggle"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -76,7 +92,17 @@ export const NavBar = ({ cartItemCount }) => {
                     {item.label}
                   </Link>
                 ))}
-                {/* Removed shopping cart from mobile menu */}
+
+                {/* Language Selector in Mobile Menu */}
+                <select
+                  className="language-selector mobile-lang"
+                  value={i18n.language}
+                  onChange={(e) => changeLanguage(e.target.value)}
+                >
+                  <option value="en">EN</option>
+                  <option value="ee">EE</option>
+                  <option value="ru">RU</option>
+                </select>
               </motion.div>
             </>
           )}

@@ -1,0 +1,118 @@
+{
+  "navbar": {
+    "home": "Avaleht",
+    "menu": "Menüü",
+    "about": "Meist",
+    "location": "Asukoht",
+    "language": "Keel"
+  },
+  "about": {
+    "ourStory": "Meie lugu",
+    "storyText": "Nata-Nord Tallinn algas 2025. aastal, inspireerituna armastusest küpsetamise vastu ja soovist tuua Portugali maitse Eestisse. Portugali päritolu asutaja, kes elab Tallinnas, alustas lihtsast ideest: jagada traditsioonilist pastel de nata kohalikule kogukonnale.\n\nSee algas väikesest köögiprojektist, mis kasvas kiiresti, kui rohkem inimesi avastas ja armastas meie saiakesi. Kasutades pere retsepti ja värskeid koostisosi, küpsetame iga nata hoolikalt ja uhkusega.\n\nTäna on Nata-Nord väike tükk Portugali Tallinna südames — jagades sooje, krõbedaid natasid ja kirge hea toidu vastu.",
+    "ourVision": "Meie visioon",
+    "visionText": "Nata-Nord Tallinnas soovime jagada Portugali tõelist maitset kõigiga Tallinnas. Küpsetame värskeid ja maitsvaid pastéis de nata hoolikalt ning kasutame parimaid koostisosi.\n\nMeie eesmärk on tuua rõõmu ja häid hetki läbi meie saiakeste ning teha kõigil mugav olla.",
+    "ourTeam": "Meie meeskond",
+    "orderNow": "Esitage tellimus",
+    "orderText": "Kogege meie värskete Pasteis de Nata kollektsiooni, mida saab tellida veebis.",
+    "openingHours": "Lahtiolekuajad: Esmaspäev - Reede: 10:00 - 20:00",
+    "weekendHours": "Nädalavahetusel: 10:00 - 18:00",
+    "tiagoRole": "Asutaja ja pagar",
+    "tiagoDesc": "Kirgeline portugali pagar traditsioonilise saiakunsti osas.",
+    "sonjaRole": "Kaasasutaja ja juht",
+    "sonjaDesc": "Eestlasest juurpäritoluga, armastab saiakesi ja klienditeenindust."
+  },
+  "footer": {
+    "brandName": "Nata-Nord Tallinn",
+    "brandDescription": "Portugali pagaritöökoda Tallinna südames",
+    "navigation": "Navigeerimine",
+    "contact": "Kontakt",
+    "legal": "Õiguslik",
+    "onlineShopLocation": "Veebipood, Tallinn",
+    "privacyPolicy": "Privaatsuspoliitika",
+    "termsOfService": "Teenustingimused",
+    "returns": "Tagastused",
+    "allRightsReserved": "Kõik õigused kaitstud.",
+    "builtWithLove": "Ehitatud armastusega Eestis"
+  },
+  "hero": {
+    "welcome": "Tere tulemast Nata-Nord Tallinna",
+    "tagline": "Kus Põhjamaade rahu kohtub Lissaboni soojusega",
+    "orderNow": "Telli kohe"
+  },
+  "home": {
+    "features": {
+      "title": "Miks valida Nata-Nord Tallinn?",
+      "authenticTitle": "Autentne Portugali retsept",
+      "authenticDesc": "Käsitööna valminud pastéis de nata, tehtud armastuse ja traditsiooniga.",
+      "cozyTitle": "Soe ja hubane pagarikoda",
+      "cozyDesc": "Naudi sõbralikku atmosfääri, mis sobib iga külastuse jaoks.",
+      "communityTitle": "Kogukonna lemmik",
+      "communityDesc": "Liitu teiste nata armastajatega, jagades hetki ja mälestusi."
+    }
+  },
+  "location": {
+    "title": "Meie asukoht",
+    "address": "Veebipood",
+    "city": "Tallinn, Eesti",
+    "callPhone": "Helista telefoninumbrile",
+    "sendEmail": "Saada e-kiri",
+    "instagramProfile": "Instagrami profiil",
+    "locationLabel": "Asukoht",
+    "locationText": "Veebipood, Tallinn",
+    "openingHours": "Lahtiolekuajad",
+    "weekdayHours": "Esmaspäev - Reede: 10:00 - 20:00",
+    "weekendHours": "Laupäev - Pühapäev: 10:00 - 18:00",
+    "mapTitle": "Tallinna kaart",
+    "viewLargerMap": "Vaata suuremat kaarti",
+    "getDirections": "Kuidas kohale saada"
+  },
+  "menu": {
+    "title": "Meie Nata Menüü",
+    "pricingTitle": "Hinnakiri",
+    "minOrderLabel": "Minimaalne tellimus",
+    "minOrderUnits": "6 ühikut",
+    "priceRange1": "6–10 ühikut",
+    "price1": "1.25€ ühiku kohta",
+    "priceRange2": "11+ ühikut",
+    "price2": "1.00€ ühiku kohta",
+    "deliveryTitle": "Kohaletoimetamine",
+    "deliveryCityCenter": "Kohaletoimetamine Tallinna kesklinnas",
+    "deliveryCityCenterPrice": "2.00€",
+    "freeDeliveryThreshold": "Tasuta kohaletoimetamine üle 20 ühiku tellimustele.",
+    "deliveryOutside": "Kohaletoimetamine väljaspool Tallinna kesklinna",
+    "deliveryOutsidePrice": "5.00€",
+    "deliveryOutsideDiscount": "Kohaletoimetamine väljaspool Tallinna kesklinna üle 20 ühiku tellimustele",
+    "deliveryOutsideDiscountPrice": "3.00€",
+    "orderButton": "Telli veebist"
+  },
+  "orderForm": {
+    "labels": {
+      "name": "Nimi",
+      "email": "E-post",
+      "phone": "Telefon",
+      "natas": "Nataste arv",
+      "min": "vähemalt",
+      "deliveryLocation": "Kohaletoimetamise koht",
+      "deliveryDay": "Kohaletoimetamise päev",
+      "preferredTime": "Eelistatud aeg"
+    },
+    "placeholders": {
+      "phone": "Valikuline",
+      "preferredTime": "nt 14:00 - 16:00"
+    },
+    "deliveryOptions": {
+      "inside": "Tallinna piires",
+      "outside": "Väljaspool Tallinna"
+    },
+    "totalPrice": "Koguhind",
+    "buttons": {
+      "sendOrder": "Saada tellimus"
+    },
+    "errors": {
+      "requiredFields": "Palun täitke kohustuslikud väljad: nimi ja e-post.",
+      "deliveryDetails": "Palun märkige kohaletoimetamise päev ja eelistatud aeg.",
+      "sendFailed": "Tellimuse saatmine ebaõnnestus. Palun proovige uuesti."
+    },
+    "successMessage": "Tellimus saadetud edukalt! Võtame teiega peagi ühendust, et tellimus kinnitada ja kohaletoimetamise aeg kokku leppida."
+  }
+}
