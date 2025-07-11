@@ -157,3 +157,52 @@
     grid-template-columns: 1fr;
   }
 }
+
+.team-member {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.member-photo {
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.member-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 768px) {
+  .member-photo {
+    width: 150px;
+    height: 150px;
+  }
+
+  .team-section h2 {
+    font-size: 2rem;
+  }
+
+  .team-member h3 {
+    font-size: 1.25rem;
+  }
+
+  .team-member h4 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .team-member p {
+    font-size: 0.95rem;
+    max-width: 90%;
+  }
+}
