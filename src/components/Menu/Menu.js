@@ -35,8 +35,12 @@ const Menu = () => {
 
         <h2>Delivery</h2>
         <ul>
-          <li>🚚 Delivery in Tallinn City Center: <strong>2.00€</strong></li>
-          <li>🎉 Free delivery for orders over <strong>20 units</strong></li>
+          <li>
+  🚚 Delivery in Tallinn City Center: <strong>2.00€<br />🎉 Free delivery for orders over 20 units.</strong>
+</li>
+          <li>🚚 Delivery outside Tallinn City Center: <strong>5.00€</strong></li>
+          <li> Delivery outside Tallinn City Center for orders over 20 units: <strong>3.00€</strong></li>
+
         </ul>
 
         <button className="order-button" onClick={handleOrderClick}>
