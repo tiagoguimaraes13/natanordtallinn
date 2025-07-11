@@ -9,8 +9,9 @@ import Menu from './components/Menu/Menu';
 import { Location } from "./components/Location/Location";
 import { AboutUs } from "./components/AboutUs/AboutUs";
 import { Footer } from "./components/Footer/Footer";
-import "./App.css";
 import OrderForm from './components/OrderForm/OrderForm';
+import ScrollToTop from './components/ScrollToTop'; // 👈 Add this
+import "./App.css";
 
 export const App = () => {
   const location = useLocation();
@@ -19,6 +20,9 @@ export const App = () => {
     <div className="app-container">
       {/* NavBar Component */}
       <NavBar />
+
+      {/* Scroll to top on route change */}
+      <ScrollToTop />
 
       {/* Main Content */}
       <main className="main-content">
