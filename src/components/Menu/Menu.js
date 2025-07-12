@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import './Menu.css'; // Create this for custom styles
-import { useNavigate } from 'react-router-dom';
+import './Menu.css';
+import { useNavigate, Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
 const Menu = () => {
@@ -38,11 +38,17 @@ const Menu = () => {
         <h2>{t('menu.deliveryTitle')}</h2>
         <ul>
           <li>
-            🚚 {t('menu.deliveryCityCenter')}: <strong>{t('menu.deliveryCityCenterPrice')}<br />🎉 {t('menu.freeDeliveryThreshold')}</strong>
+            🚚 {t('menu.deliveryCityCenter')}: <strong>{t('menu.deliveryCityCenterPrice')}</strong><br />
+            🎉 {t('menu.freeDeliveryThreshold')}
           </li>
           <li>🚚 {t('menu.deliveryOutside')}: <strong>{t('menu.deliveryOutsidePrice')}</strong></li>
           <li>{t('menu.deliveryOutsideDiscount')} <strong>{t('menu.deliveryOutsideDiscountPrice')}</strong></li>
         </ul>
+
+        {/* Delivery Map Link */}
+        <Link to="/delivery-map" className="delivery-map-link">
+          {t('menu.seeDeliveryMap')}
+        </Link>
 
         <button className="order-button" onClick={handleOrderClick}>
           {t('menu.orderButton')}

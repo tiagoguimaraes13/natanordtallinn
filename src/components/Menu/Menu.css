@@ -39,7 +39,8 @@
   margin-bottom: 0.7rem;
 }
 
-.order-button {
+.order-button,
+.delivery-map-link {
   margin-top: 30px;
   padding: 14px 32px;
   background: linear-gradient(45deg, #d69f2d, #b3721a);
@@ -51,9 +52,41 @@
   cursor: pointer;
   box-shadow: 0 4px 10px rgba(198, 143, 57, 0.6);
   transition: background 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
 }
 
-.order-button:hover {
+.order-button:hover,
+.delivery-map-link:hover,
+.delivery-map-link:focus {
   background: linear-gradient(45deg, #b3721a, #d69f2d);
   box-shadow: 0 6px 15px rgba(198, 143, 57, 0.8);
+  color: #fff8e1;
+  text-decoration: none;
+}
+
+.delivery-description {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background-color: #fff8f0;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(192, 110, 53, 0.2);
+  color: #6b3e1d;
+}
+
+.delivery-description h2 {
+  margin-top: 1rem;
+  font-size: 1.25rem;
+  color: #c06e35;
+}
+
+.delivery-description ul {
+  margin-top: 0.5rem;
+  padding-left: 1.2rem;
+  list-style-type: none;
+}
+
+.delivery-description li {
+  margin-bottom: 0.5rem;
 }

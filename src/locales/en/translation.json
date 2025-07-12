@@ -83,7 +83,8 @@
     "deliveryOutsidePrice": "5.00€",
     "deliveryOutsideDiscount": "Delivery outside Tallinn City Center for orders over 20 units",
     "deliveryOutsideDiscountPrice": "3.00€",
-    "orderButton": "Order Online"
+    "orderButton": "Order Online",
+    "seeDeliveryMap": "📍 See here our delivery map"
   },
   "orderForm": {
     "labels": {
@@ -149,5 +150,22 @@
     "changesText": "We may update these terms from time to time. Continued use means you accept the changes.",
     "contactTitle": "Contact Us",
     "contactText": "For questions regarding these terms, contact natanord.tallinn@gmail.com"
+  },
+"deliveryMap": {
+  "title": "Our Delivery Map",
+  "backToMenu": "Back to Menu",
+  "under20": {
+    "title": "Orders under 20 units:",
+    "cityCenter": "Delivery in Tallinn City Center: €2",
+    "outsideCenter": "Delivery in Tallinn outside City Center: €5",
+    "outsideTallinn": "Delivery outside Tallinn: Under Request"
+  },
+  "over20": {
+    "title": "Orders over 20 units:",
+    "cityCenter": "Delivery in Tallinn City Center: Free",
+    "outsideCenter": "Delivery in Tallinn outside City Center: €3",
+    "outsideTallinn": "Delivery outside Tallinn: Under Request"
   }
+}
+
 }

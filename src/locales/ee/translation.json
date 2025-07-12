@@ -83,7 +83,8 @@
     "deliveryOutsidePrice": "5.00€",
     "deliveryOutsideDiscount": "Kohaletoimetamine väljaspool Tallinna kesklinna üle 20 ühiku tellimustele",
     "deliveryOutsideDiscountPrice": "3.00€",
-    "orderButton": "Telli veebist"
+    "orderButton": "Telli veebist",
+    "seeDeliveryMap": "📍 Vaata siit meie tarnekaarti"
   },
   "orderForm": {
     "labels": {
@@ -148,6 +149,23 @@
   "changesText": "Me võime neid tingimusi aeg-ajalt uuendada. Teenuse jätkuv kasutamine tähendab, et nõustute muudatustega.",
   "contactTitle": "Võtke meiega ühendust",
   "contactText": "Kui teil on küsimusi nende tingimuste kohta, võtke ühendust aadressil natanord.tallinn@gmail.com"
+},
+"deliveryMap": {
+  "title": "Meie kohaletoimetamise kaart",
+  "backToMenu": "Tagasi menüüsse",
+  "under20": {
+    "title": "Tellimused alla 20 ühiku:",
+    "cityCenter": "Tallinna kesklinna kohaletoomine: 2€",
+    "outsideCenter": "Tallinna äärelinna kohaletoomine: 5€",
+    "outsideTallinn": "Tallinnast väljaspool: kokkuleppel"
+  },
+  "over20": {
+    "title": "Tellimused üle 20 ühiku:",
+    "cityCenter": "Tallinna kesklinna kohaletoomine: tasuta",
+    "outsideCenter": "Tallinna äärelinna kohaletoomine: 3€",
+    "outsideTallinn": "Tallinnast väljaspool: kokkuleppel"
+  }
 }
+
 
 }

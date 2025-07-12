@@ -15,6 +15,8 @@ import ScrollToTopOnRouteChange from './components/ScrollToTopOnRouteChange';  /
 import { PrivacyPolicy } from "./components/PrivacyPolicy/PrivacyPolicy";       // NEW
 import { TermsOfService } from "./components/TermsOfService/TermsOfService";    // NEW
 import "./App.css";
+import { DeliveryMap } from "./components/DeliveryMap/DeliveryMap";
+
 
 export const App = () => {
   const location = useLocation();
@@ -45,6 +47,8 @@ export const App = () => {
               {/* New Routes */}
               <Route path="/privacy-policy" element={<PrivacyPolicy />} />
               <Route path="/terms-of-service" element={<TermsOfService />} />
+              <Route path="/delivery-map" element={<DeliveryMap />} />
+
             </Routes>
           </motion.div>
         </AnimatePresence>
