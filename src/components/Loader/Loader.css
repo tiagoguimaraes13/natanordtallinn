@@ -1,0 +1,40 @@
+.loader-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: #fff7e6; /* soft cream background */
+  color: #c48a2e; /* warm golden */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.loader-logo {
+  width: 150px;
+  height: auto;
+  margin-bottom: 20px;
+  user-select: none;
+}
+
+.fade-message {
+  font-size: 1.5rem;
+  font-weight: 600;
+  animation: fadeInOut 3s ease-in-out infinite;
+  text-align: center;
+}
+
+/* Fade in/out keyframes */
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

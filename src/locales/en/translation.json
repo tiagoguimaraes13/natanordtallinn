@@ -166,6 +166,14 @@
     "outsideCenter": "Delivery in Tallinn outside City Center: €3",
     "outsideTallinn": "Delivery outside Tallinn: Under Request"
   }
+},
+"loader": {
+  "welcome": {
+    "en": "Welcome to Nata-Nord Tallinn",
+    "et": "Tere tulemast Nata-Nord Tallinna",
+    "ru": "Добро пожаловать в Nata-Nord Таллинн"
+  }
 }
+
 
 }

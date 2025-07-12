@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Routes, Route, useLocation, Navigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -17,9 +17,22 @@ import { TermsOfService } from "./components/TermsOfService/TermsOfService";    
 import "./App.css";
 import { DeliveryMap } from "./components/DeliveryMap/DeliveryMap";
 
+import Loader from './components/Loader/Loader';  // <-- import your Loader here
 
 export const App = () => {
   const location = useLocation();
+
+  const [loading, setLoading] = useState(true);
+
+  // Show loader for 3 seconds then hide
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 4500);
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) {
+    return <Loader />;
+  }
 
   return (
     <div className="app-container">
@@ -48,7 +61,6 @@ export const App = () => {
               <Route path="/privacy-policy" element={<PrivacyPolicy />} />
               <Route path="/terms-of-service" element={<TermsOfService />} />
               <Route path="/delivery-map" element={<DeliveryMap />} />
-
             </Routes>
           </motion.div>
         </AnimatePresence>
