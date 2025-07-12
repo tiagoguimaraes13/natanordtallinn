@@ -12,6 +12,8 @@ import { Footer } from "./components/Footer/Footer";
 import OrderForm from './components/OrderForm/OrderForm';
 import ScrollToTop from './components/ScrollToTop';  // your scroll-to-top BUTTON
 import ScrollToTopOnRouteChange from './components/ScrollToTopOnRouteChange';  // the new auto scroll on route change
+import { PrivacyPolicy } from "./components/PrivacyPolicy/PrivacyPolicy";       // NEW
+import { TermsOfService } from "./components/TermsOfService/TermsOfService";    // NEW
 import "./App.css";
 
 export const App = () => {
@@ -40,6 +42,9 @@ export const App = () => {
               <Route path="/location" element={<Location />} />
               <Route path="/aboutus" element={<AboutUs />} />
               <Route path="/order" element={<OrderForm />} />
+              {/* New Routes */}
+              <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+              <Route path="/terms-of-service" element={<TermsOfService />} />
             </Routes>
           </motion.div>
         </AnimatePresence>

@@ -115,5 +115,39 @@
     },
     "successMessage": "Tellimus saadetud edukalt! Võtame teiega peagi ühendust, et tellimus kinnitada ja kohaletoimetamise aeg kokku leppida."
   },
-  "scrollToTop": "Kerige üles"
+  "scrollToTop": "Kerige üles",
+
+"privacyPolicy": {
+  "title": "Privaatsuspoliitika",
+  "intro": "Teie privaatsus on meile oluline. See privaatsuspoliitika selgitab, kuidas me kogume, kasutame ja kaitseme teie teavet.",
+  "dataCollectionTitle": "Andmete kogumine",
+  "dataCollectionText": "Kogume isikuandmeid, nagu nimi, e-post, telefoninumber ja tarneaadress, kui esitate tellimuse.",
+  "dataUseTitle": "Andmete kasutamine",
+  "dataUseText": "Teavet kasutatakse tellimuste töötlemiseks, teiega suhtlemiseks ja teenuste parandamiseks. Me ei jaga teie andmeid kolmandate osapooltega, välja arvatud kohaletoimetamise eesmärgil.",
+  "dataProtectionTitle": "Andmete kaitse",
+  "dataProtectionText": "Rakendame turvameetmeid teie andmete kaitsmiseks volitamata juurdepääsu või avalikustamise eest.",
+  "cookiesTitle": "Küpsised",
+  "cookiesText": "Meie veebisait kasutab küpsiseid, et parandada teie kasutajakogemust. Saate küpsiste eelistusi muuta oma brauseri seadetes.",
+  "contactTitle": "Võtke meiega ühendust",
+  "contactText": "Kui teil on küsimusi selle privaatsuspoliitika kohta, võtke meiega ühendust aadressil privacy@nata-nord.ee."
+},
+"termsOfService": {
+  "title": "Kasutustingimused",
+  "intro": "Need tingimused reguleerivad Nata-Nord Tallinna teenuste kasutamist. Meie veebisaiti kasutades nõustute nende tingimustega.",
+  "ordersTitle": "Tellimused",
+  "ordersText": "Tellimusi saab esitada veebis. Meil on õigus tühistada või keelduda mistahes tellimusest.",
+  "paymentTitle": "Makse",
+  "paymentText": "Maksmine peab olema tehtud enne kohaletoimetamist. Aktsepteerime kõiki suuremaid makseviise.",
+  "deliveryTitle": "Kohaletoimetamine",
+  "deliveryText": "Kohaletoimetamise ajad on hinnangulised ja võivad varieeruda. Me ei vastuta kolmandatest osapooltest tingitud viivituste eest.",
+  "refundsTitle": "Tagasimaksed ja tagastused",
+  "refundsText": "Kui teil on tellimusega probleeme, võtke meiega ühendust. Tagasimaksed või asendused lahendatakse iga juhtumi puhul eraldi.",
+  "userConductTitle": "Kasutaja käitumine",
+  "userConductText": "Nõustute mitte kuritarvitama meie teenuseid ega osalema kahjulikus käitumises.",
+  "changesTitle": "Tingimuste muutmine",
+  "changesText": "Me võime neid tingimusi aeg-ajalt uuendada. Teenuse jätkuv kasutamine tähendab, et nõustute muudatustega.",
+  "contactTitle": "Võtke meiega ühendust",
+  "contactText": "Kui teil on küsimusi nende tingimuste kohta, võtke ühendust aadressil natanord.tallinn@gmail.com"
+}
+
 }

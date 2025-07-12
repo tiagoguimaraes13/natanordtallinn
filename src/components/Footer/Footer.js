@@ -35,9 +35,8 @@ export const Footer = () => {
     {
       title: t('footer.legal'),
       links: [
-        { name: t('footer.privacyPolicy'), path: '/privacy' },
-        { name: t('footer.termsOfService'), path: '/terms' },
-        { name: t('footer.returns'), path: '/returns' },
+        { name: t('footer.privacyPolicy'), path: '/privacy-policy' },    // updated path
+        { name: t('footer.termsOfService'), path: '/terms-of-service' }, // updated path
       ],
     },
   ];
