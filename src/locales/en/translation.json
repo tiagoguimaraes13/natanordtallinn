@@ -115,5 +115,6 @@
       "sendFailed": "Failed to send order. Please try again."
     },
     "successMessage": "Order sent successfully! We will contact you soon to confirm your order and schedule the delivery time."
-  }
+  },
+"scrollToTop": "Scroll to top"
 }

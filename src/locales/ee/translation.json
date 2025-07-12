@@ -114,5 +114,6 @@
       "sendFailed": "Tellimuse saatmine ebaõnnestus. Palun proovige uuesti."
     },
     "successMessage": "Tellimus saadetud edukalt! Võtame teiega peagi ühendust, et tellimus kinnitada ja kohaletoimetamise aeg kokku leppida."
-  }
+  },
+  "scrollToTop": "Kerige üles"
 }

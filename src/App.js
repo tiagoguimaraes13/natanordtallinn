@@ -10,7 +10,8 @@ import { Location } from "./components/Location/Location";
 import { AboutUs } from "./components/AboutUs/AboutUs";
 import { Footer } from "./components/Footer/Footer";
 import OrderForm from './components/OrderForm/OrderForm';
-import ScrollToTop from './components/ScrollToTop';
+import ScrollToTop from './components/ScrollToTop';  // your scroll-to-top BUTTON
+import ScrollToTopOnRouteChange from './components/ScrollToTopOnRouteChange';  // the new auto scroll on route change
 import "./App.css";
 
 export const App = () => {
@@ -19,7 +20,9 @@ export const App = () => {
   return (
     <div className="app-container">
       <NavBar />
-      <ScrollToTop />
+
+      {/* Automatically scroll to top on route change */}
+      <ScrollToTopOnRouteChange />
 
       <main className="main-content">
         <AnimatePresence mode="wait">
@@ -41,6 +44,9 @@ export const App = () => {
           </motion.div>
         </AnimatePresence>
       </main>
+
+      {/* Your manual scroll to top button */}
+      <ScrollToTop />
 
       <Footer />
     </div>
