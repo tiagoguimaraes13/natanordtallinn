@@ -9,7 +9,7 @@ const OrderForm = () => {
     name: '',
     email: '',
     phone: '',
-    natas: 6,
+    natas: '',
     delivery: 'inside',
     deliveryDay: '',
     preferredTime: '',
@@ -21,7 +21,7 @@ const OrderForm = () => {
   // Calculate total price whenever natas or delivery changes
   useEffect(() => {
     const n = formData.natas;
-    if (!n || n < 6) {
+    if (!n || n < '') {
       setTotalPrice(0);
       return;
     }
@@ -43,7 +43,7 @@ const OrderForm = () => {
 
     if (name === 'natas') {
       let n = parseInt(value, 10);
-      if (isNaN(n) || n < 6) n = 6;
+      if (isNaN(n) || n < 1) n = 1;
       else if (n > 500) n = 500;
       setFormData((prev) => ({ ...prev, [name]: n }));
     } else {
@@ -102,7 +102,7 @@ const OrderForm = () => {
           name: '',
           email: '',
           phone: '',
-          natas: 6,
+          natas: '',
           delivery: 'inside',
           deliveryDay: '',
           preferredTime: '',
@@ -158,12 +158,12 @@ const OrderForm = () => {
       </label>
 
       <label>
-        {t('orderForm.labels.natas')}* ({t('orderForm.labels.min')} 6):
+        {t('orderForm.labels.natas')}* ({t('orderForm.labels.min')} ):
         <input
           type="number"
           name="natas"
           value={formData.natas}
-          min={6}
+          min={1}
           max={500}
           onChange={handleChange}
           style={{ width: '100%', padding: '8px', margin: '5px 0' }}
