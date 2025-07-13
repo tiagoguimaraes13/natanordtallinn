@@ -14,17 +14,19 @@ const OrderForm = () => {
     deliveryDay: '',
     preferredTime: '',
   });
+
   const [totalPrice, setTotalPrice] = useState(0);
   const [statusMessage, setStatusMessage] = useState('');
   const [statusSuccess, setStatusSuccess] = useState(false);
 
-  // Calculate total price whenever natas or delivery changes
+  // Price calculation
   useEffect(() => {
-    const n = formData.natas;
-    if (!n || n < '') {
+    const n = parseInt(formData.natas, 10);
+    if (isNaN(n)) {
       setTotalPrice(0);
       return;
     }
+
     let pricePerUnit = n >= 11 ? 1 : 1.25;
 
     let deliveryCost = 0;
@@ -38,40 +40,54 @@ const OrderForm = () => {
     setTotalPrice(total.toFixed(2));
   }, [formData.natas, formData.delivery]);
 
+  // Input change handler
   const handleChange = (e) => {
     const { name, value } = e.target;
 
     if (name === 'natas') {
-      let n = parseInt(value, 10);
-      if (isNaN(n) || n < 1) n = 1;
-      else if (n > 500) n = 500;
-      setFormData((prev) => ({ ...prev, [name]: n }));
+      // Allow only digits or empty string to let user type freely
+      if (value === '' || /^[0-9]*$/.test(value)) {
+        setFormData((prev) => ({ ...prev, [name]: value }));
+      }
     } else {
       setFormData((prev) => ({ ...prev, [name]: value }));
+    }
+  };
+
+  // Validate & format natas on blur
+  const handleBlur = (e) => {
+    if (e.target.name === 'natas') {
+      let n = parseInt(formData.natas, 10);
+      if (isNaN(n) || n < 1) n = 1;
+      else if (n > 500) n = 500;
+      setFormData((prev) => ({ ...prev, natas: n.toString() }));
     }
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!formData.name || !formData.email) {
-      setStatusMessage(t('orderForm.errors.requiredFields'));
-      setStatusSuccess(false);
-      return;
-    }
-
-    if (!formData.deliveryDay || !formData.preferredTime) {
-      setStatusMessage(t('orderForm.errors.deliveryDetails'));
+    const n = parseInt(formData.natas, 10);
+    if (
+      !formData.name ||
+      !formData.email ||
+      !formData.deliveryDay ||
+      !formData.preferredTime ||
+      isNaN(n) ||
+      n < 1 ||
+      n > 500
+    ) {
+      setStatusMessage(t('orderForm.errors.invalidNatas') || 'Please fill all required fields and enter a valid number of natas (1–500).');
       setStatusSuccess(false);
       return;
     }
 
     const templateParams = {
-      title: "New Order from Nata-Nord Tallinn",
+      title: 'New Order from Nata-Nord Tallinn',
       name: formData.name,
       email: formData.email,
       phone: formData.phone || 'N/A',
-      natas: formData.natas.toString(),
+      natas: n.toString(),
       delivery: formData.delivery,
       deliveryDay: formData.deliveryDay,
       preferredTime: formData.preferredTime,
@@ -158,14 +174,16 @@ const OrderForm = () => {
       </label>
 
       <label>
-        {t('orderForm.labels.natas')}* ({t('orderForm.labels.min')} ):
+        {t('orderForm.labels.natas')}* ({t('orderForm.labels.min')}):
         <input
           type="number"
           name="natas"
           value={formData.natas}
+          onChange={handleChange}
+          onBlur={handleBlur}
           min={1}
           max={500}
-          onChange={handleChange}
+          required
           style={{ width: '100%', padding: '8px', margin: '5px 0' }}
         />
       </label>
@@ -192,7 +210,7 @@ const OrderForm = () => {
           onChange={handleChange}
           required
           style={{ width: '100%', padding: '8px', margin: '5px 0' }}
-          min={new Date().toISOString().split('T')[0]} // delivery date can't be in the past
+          min={new Date().toISOString().split('T')[0]}
         />
       </label>
 
