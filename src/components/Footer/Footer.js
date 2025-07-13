@@ -97,6 +97,7 @@ export const Footer = () => {
           <p>
             &copy; {currentYear} {t('footer.brandName')}. {t('footer.allRightsReserved')}
           </p>
+          <p>{t('footer.builtBy')}</p>  {/* <-- new line */}
           <p>{t('footer.builtWithLove')}</p>
         </div>
       </div>
