@@ -88,36 +88,61 @@
     "orderButton": "Order Online",
     "seeDeliveryMap": "📍 See here our delivery map"
   },
-  "orderForm": {
-    "labels": {
-      "name": "Name",
-      "email": "Email",
-      "phone": "Phone",
-      "natas": "Number of Natas",
-      "min": "min",
-      "deliveryLocation": "Delivery Location",
-      "deliveryDay": "Delivery Day",
-      "preferredTime": "Preferred Time"
-    },
-    "placeholders": {
-      "phone": "Optional",
-      "preferredTime": "e.g., 14:00 - 16:00"
-    },
-    "deliveryOptions": {
-      "inside": "Inside Tallinn",
-      "outside": "Outside Tallinn"
-    },
-    "totalPrice": "Total Price",
-    "buttons": {
-      "sendOrder": "Send Order"
-    },
-    "errors": {
-      "requiredFields": "Please fill out required fields: Name and Email.",
-      "deliveryDetails": "Please specify delivery day and preferred time.",
-      "sendFailed": "Failed to send order. Please try again."
-    },
-    "successMessage": "Order sent successfully! We will contact you soon to confirm your order and schedule the delivery time."
+
+"orderForm": {
+  "labels": {
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone",
+    "natas": "Number of Natas",
+    "min": "min",
+    "deliveryLocation": "Delivery Location",
+    "deliveryDay": "Delivery Day",
+    "preferredTime": "Preferred Time",
+    "contactPreference": "Preferred Contact Method",
+    "contactMethod": "Preferred Contact Method",
+    "deliveryAddress": "Delivery Address"
   },
+  "errors": {
+    "invalidNatas": "Please enter a valid number of natas (1–500).",
+    "requiredFields": "Please fill in the required fields: name and email.",
+    "deliveryDetails": "Please specify the delivery day, time, and location.",
+    "sendFailed": "Failed to send the order. Please try again.",
+    "invalidEmail": "Please enter a valid email address.",
+    "invalidPhone": "Please enter a valid phone number (optional).",
+    "addressRequired": "Please provide a delivery address."
+  },
+  "placeholders": {
+    "phone": "Optional",
+    "preferredTime": "e.g., 14:00 - 16:00",
+    "deliveryAddress": "Street, building number, apartment (if applicable)",
+    "contactPreference": "Select email or phone"
+  },
+  "deliveryOptions": {
+    "inside": "Inside Tallinn",
+    "outside": "Outside Tallinn"
+  },
+  "contactMethods": {
+    "email": "Email",
+    "phone": "Phone",
+    "sms": "SMS"
+  },
+  "totalPrice": "Total Price",
+  "buttons": {
+    "sendOrder": "Send Order",
+    "confirm": "Confirm",
+    "edit": "Edit",
+    "confirmOrder": "Confirm Order",
+    "cancel": "Cancel"
+  },
+  "confirmationTitle": "Confirm Your Order",
+  "confirmation": {
+    "editNotice": "Please review the details below. You can edit them before confirming.",
+    "finalNote": "We’ll contact you to confirm your order and schedule the delivery time."
+  },
+  "successMessage": "Order sent successfully! We will contact you soon to confirm your order and arrange the delivery time."
+},
+
   "scrollToTop": "Scroll to top",
   
   "privacyPolicy": {

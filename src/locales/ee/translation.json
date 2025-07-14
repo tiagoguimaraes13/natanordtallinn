@@ -87,36 +87,61 @@
     "orderButton": "Telli veebist",
     "seeDeliveryMap": "📍 Vaata siit meie tarnekaarti"
   },
-  "orderForm": {
-    "labels": {
-      "name": "Nimi",
-      "email": "E-post",
-      "phone": "Telefon",
-      "natas": "Nataste arv",
-      "min": "vähemalt",
-      "deliveryLocation": "Kohaletoimetamise koht",
-      "deliveryDay": "Kohaletoimetamise päev",
-      "preferredTime": "Eelistatud aeg"
-    },
-    "placeholders": {
-      "phone": "Valikuline",
-      "preferredTime": "nt 14:00 - 16:00"
-    },
-    "deliveryOptions": {
-      "inside": "Tallinna piires",
-      "outside": "Väljaspool Tallinna"
-    },
-    "totalPrice": "Koguhind",
-    "buttons": {
-      "sendOrder": "Saada tellimus"
-    },
-    "errors": {
-      "requiredFields": "Palun täitke kohustuslikud väljad: nimi ja e-post.",
-      "deliveryDetails": "Palun märkige kohaletoimetamise päev ja eelistatud aeg.",
-      "sendFailed": "Tellimuse saatmine ebaõnnestus. Palun proovige uuesti."
-    },
-    "successMessage": "Tellimus saadetud edukalt! Võtame teiega peagi ühendust, et tellimus kinnitada ja kohaletoimetamise aeg kokku leppida."
+ "orderForm": {
+  "labels": {
+    "name": "Nimi",
+    "email": "E-post",
+    "phone": "Telefon",
+    "natas": "Natatükkide arv",
+    "min": "min",
+    "deliveryLocation": "Kohaletoimetamise asukoht",
+    "deliveryDay": "Kättetoimetamise päev",
+    "preferredTime": "Soovitud aeg",
+    "contactPreference": "Eelistatud kontaktiviis",
+    "contactMethod": "Eelistatud kontaktiviis",
+    "deliveryAddress": "Kohaletoimetamise aadress"
   },
+  "errors": {
+    "invalidNatas": "Palun sisestage korrektne natade arv (1–500).",
+    "requiredFields": "Palun täitke nõutavad väljad: nimi ja e-post.",
+    "deliveryDetails": "Palun määrake kohaletoimetamise päev, aeg ja asukoht.",
+    "sendFailed": "Tellimuse saatmine ebaõnnestus. Palun proovige uuesti.",
+    "invalidEmail": "Palun sisestage kehtiv e-posti aadress.",
+    "invalidPhone": "Palun sisestage kehtiv telefoninumber (valikuline).",
+    "addressRequired": "Palun sisestage kohaletoimetamise aadress."
+  },
+  "placeholders": {
+    "phone": "Valikuline",
+    "preferredTime": "nt 14:00 - 16:00",
+    "deliveryAddress": "Tänav, maja number, korter (kui on)",
+    "contactPreference": "Vali e-post või telefon"
+  },
+  "deliveryOptions": {
+    "inside": "Tallinna sees",
+    "outside": "Tallinnast väljas"
+  },
+  "contactMethods": {
+    "email": "E-post",
+    "phone": "Telefon",
+    "sms": "SMS"
+  },
+  "totalPrice": "Koguhind",
+  "buttons": {
+    "sendOrder": "Saada tellimus",
+    "confirm": "Kinnita",
+    "edit": "Muuda",
+    "confirmOrder": "Kinnita tellimus",
+    "cancel": "Tühista"
+  },
+  "confirmationTitle": "Kinnita oma tellimus",
+  "confirmation": {
+    "editNotice": "Kontrolli allolevad andmed üle. Soovi korral saad neid enne kinnitamist muuta.",
+    "finalNote": "Võtame teiega ühendust, et tellimus kinnitada ja kohaletoimetamise aeg kokku leppida."
+  },
+  "successMessage": "Tellimus saadetud edukalt! Võtame teiega peagi ühendust, et tellimus kinnitada ja kohaletoimetamise aeg kokku leppida."
+},
+
+
   "scrollToTop": "Kerige üles",
 
 "privacyPolicy": {
