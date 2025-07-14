@@ -116,7 +116,7 @@
     "phone": "Optional",
     "preferredTime": "e.g., 14:00 - 16:00",
     "deliveryAddress": "Street, building number, apartment (if applicable)",
-    "contactPreference": "Select email or phone"
+    "contactPreference": "Select email, phone or SMS"
   },
   "deliveryOptions": {
     "inside": "Inside Tallinn",

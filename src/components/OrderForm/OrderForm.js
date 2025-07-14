@@ -131,44 +131,80 @@ const OrderForm = () => {
       <form onSubmit={handleSubmit}>
         <label>
           {t('orderForm.labels.name')}*:
-          <input type="text" name="name" value={formData.name} onChange={handleChange} required style={{ width: '100%', padding: '8px', margin: '5px 0' }} />
+          <input
+            type="text"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            required
+            style={{ width: '100%', padding: '8px', margin: '5px 0' }}
+          />
         </label>
 
         <label>
           {t('orderForm.labels.email')}*:
-          <input type="email" name="email" value={formData.email} onChange={handleChange} required style={{ width: '100%', padding: '8px', margin: '5px 0' }} />
+          <input
+            type="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+            style={{ width: '100%', padding: '8px', margin: '5px 0' }}
+          />
         </label>
 
         <label>
           {t('orderForm.labels.phone')}:
-          <input type="tel" name="phone" value={formData.phone} onChange={handleChange} placeholder={t('orderForm.placeholders.phone')} style={{ width: '100%', padding: '8px', margin: '5px 0' }} />
+          <input
+            type="tel"
+            name="phone"
+            value={formData.phone}
+            onChange={handleChange}
+            placeholder={t('orderForm.placeholders.phone')}
+            style={{ width: '100%', padding: '8px', margin: '5px 0' }}
+          />
         </label>
 
-<label>
-  {t('orderForm.labels.contactPreference')}*:
-  <select
-    name="contactMethod"
-    value={formData.contactMethod}
-    onChange={handleChange}
-    required
-    style={{ width: '100%', padding: '8px', margin: '5px 0' }}
-  >
-    <option value="">{t('orderForm.placeholders.contactPreference')}</option>
-    <option value="email">{t('orderForm.contactMethods.email')}</option>
-    <option value="phone">{t('orderForm.contactMethods.phone')}</option>
-    <option value="sms">{t('orderForm.contactMethods.sms') || 'SMS'}</option>
-  </select>
-</label>
-
+        <label>
+          {t('orderForm.labels.contactPreference')}*:
+          <select
+            name="contactMethod"
+            value={formData.contactMethod}
+            onChange={handleChange}
+            required
+            style={{ width: '100%', padding: '8px', margin: '5px 0' }}
+          >
+            <option value="">{t('orderForm.placeholders.contactPreference')}</option>
+            <option value="email">{t('orderForm.contactMethods.email')}</option>
+            <option value="phone">{t('orderForm.contactMethods.phone')}</option>
+            <option value="sms">{t('orderForm.contactMethods.sms') || 'SMS'}</option>
+          </select>
+        </label>
 
         <label>
           {t('orderForm.labels.natas')}* ({t('orderForm.labels.min')}):
-          <input type="number" name="natas" value={formData.natas} onChange={handleChange} onBlur={handleBlur} min={1} max={500} required style={{ width: '100%', padding: '8px', margin: '5px 0' }} />
+          <input
+            type="number"
+            name="natas"
+            value={formData.natas}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            min={1}
+            max={500}
+            required
+            style={{ width: '100%', padding: '8px', margin: '5px 0' }}
+          />
         </label>
 
         <label>
           {t('orderForm.labels.deliveryLocation')}*:
-          <select name="delivery" value={formData.delivery} onChange={handleChange} required style={{ width: '100%', padding: '8px', margin: '5px 0' }}>
+          <select
+            name="delivery"
+            value={formData.delivery}
+            onChange={handleChange}
+            required
+            style={{ width: '100%', padding: '8px', margin: '5px 0' }}
+          >
             <option value="inside">{t('orderForm.deliveryOptions.inside')}</option>
             <option value="outside">{t('orderForm.deliveryOptions.outside')}</option>
           </select>
@@ -176,45 +212,130 @@ const OrderForm = () => {
 
         <label>
           {t('orderForm.labels.deliveryDay')}*:
-          <input type="date" name="deliveryDay" value={formData.deliveryDay} onChange={handleChange} required min={new Date().toISOString().split('T')[0]} style={{ width: '100%', padding: '8px', margin: '5px 0' }} />
+          <input
+            type="date"
+            name="deliveryDay"
+            value={formData.deliveryDay}
+            onChange={handleChange}
+            required
+            min={new Date().toISOString().split('T')[0]}
+            style={{ width: '100%', padding: '8px', margin: '5px 0' }}
+          />
         </label>
 
         <label>
           {t('orderForm.labels.preferredTime')}*:
-          <input type="text" name="preferredTime" value={formData.preferredTime} onChange={handleChange} placeholder={t('orderForm.placeholders.preferredTime')} required style={{ width: '100%', padding: '8px', margin: '5px 0' }} />
+          <input
+            type="text"
+            name="preferredTime"
+            value={formData.preferredTime}
+            onChange={handleChange}
+            placeholder={t('orderForm.placeholders.preferredTime')}
+            required
+            style={{ width: '100%', padding: '8px', margin: '5px 0' }}
+          />
         </label>
 
-        <p><strong>{t('orderForm.totalPrice')}: €{totalPrice}</strong></p>
+        <p>
+          <strong>
+            {t('orderForm.totalPrice')}: €{totalPrice}
+          </strong>
+        </p>
 
-        <button type="submit" style={{ marginTop: '15px', padding: '10px 20px', backgroundColor: '#d69f2d', color: '#fff', border: 'none', borderRadius: '30px', cursor: 'pointer', fontSize: '1rem', fontWeight: '600', width: '100%' }}>
+        <button
+          type="submit"
+          style={{
+            marginTop: '15px',
+            padding: '10px 20px',
+            backgroundColor: '#d69f2d',
+            color: '#fff',
+            border: 'none',
+            borderRadius: '30px',
+            cursor: 'pointer',
+            fontSize: '1rem',
+            fontWeight: '600',
+            width: '100%',
+          }}
+        >
           {t('orderForm.buttons.sendOrder')}
         </button>
 
         {statusMessage && (
-          <p style={{ marginTop: '10px', color: statusSuccess ? 'green' : 'red', fontWeight: '600' }} role="alert">
+          <p
+            style={{ marginTop: '10px', color: statusSuccess ? 'green' : 'red', fontWeight: '600' }}
+            role="alert"
+          >
             {statusMessage}
           </p>
         )}
       </form>
 
       {showConfirmation && (
-        <div style={{ marginTop: '30px', padding: '20px', border: '1px solid #ccc', borderRadius: '10px', backgroundColor: '#fafafa' }}>
+        <div
+          style={{
+            marginTop: '30px',
+            padding: '20px',
+            border: '1px solid #ccc',
+            borderRadius: '10px',
+            backgroundColor: '#fafafa',
+          }}
+        >
           <h3>{t('orderForm.confirmationTitle')}</h3>
-          <p><strong>{t('orderForm.labels.name')}:</strong> {formData.name}</p>
-          <p><strong>{t('orderForm.labels.email')}:</strong> {formData.email}</p>
-          <p><strong>{t('orderForm.labels.phone')}:</strong> {formData.phone || '—'}</p>
-          <p><strong>{t('orderForm.labels.contactMethod')}:</strong> {formData.contactMethod}</p>
-          <p><strong>{t('orderForm.labels.natas')}:</strong> {formData.natas}</p>
-          <p><strong>{t('orderForm.labels.deliveryLocation')}:</strong> {formData.delivery}</p>
-          <p><strong>{t('orderForm.labels.deliveryDay')}:</strong> {formData.deliveryDay}</p>
-          <p><strong>{t('orderForm.labels.preferredTime')}:</strong> {formData.preferredTime}</p>
-          <p><strong>{t('orderForm.totalPrice')}:</strong> €{totalPrice}</p>
+          <p>
+            <strong>{t('orderForm.labels.name')}:</strong> {formData.name}
+          </p>
+          <p>
+            <strong>{t('orderForm.labels.email')}:</strong> {formData.email}
+          </p>
+          <p>
+            <strong>{t('orderForm.labels.phone')}:</strong> {formData.phone || '—'}
+          </p>
+          <p>
+            <strong>{t('orderForm.labels.contactPreference')}:</strong>{' '}
+            {t(`orderForm.contactMethods.${formData.contactMethod}`) || formData.contactMethod}
+          </p>
+          <p>
+            <strong>{t('orderForm.labels.natas')}:</strong> {formData.natas}
+          </p>
+          <p>
+            <strong>{t('orderForm.labels.deliveryLocation')}:</strong>{' '}
+            {t(`orderForm.deliveryOptions.${formData.delivery}`)}
+          </p>
+          <p>
+            <strong>{t('orderForm.labels.deliveryDay')}:</strong> {formData.deliveryDay}
+          </p>
+          <p>
+            <strong>{t('orderForm.labels.preferredTime')}:</strong> {formData.preferredTime}
+          </p>
+          <p>
+            <strong>{t('orderForm.totalPrice')}:</strong> €{totalPrice}
+          </p>
 
           <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '15px' }}>
-            <button onClick={handleFinalSubmit} style={{ padding: '10px 20px', backgroundColor: 'green', color: '#fff', border: 'none', borderRadius: '20px', cursor: 'pointer' }}>
+            <button
+              onClick={handleFinalSubmit}
+              style={{
+                padding: '10px 20px',
+                backgroundColor: 'green',
+                color: '#fff',
+                border: 'none',
+                borderRadius: '20px',
+                cursor: 'pointer',
+              }}
+            >
               {t('orderForm.buttons.confirmOrder')}
             </button>
-            <button onClick={() => setShowConfirmation(false)} style={{ padding: '10px 20px', backgroundColor: 'red', color: '#fff', border: 'none', borderRadius: '20px', cursor: 'pointer' }}>
+            <button
+              onClick={() => setShowConfirmation(false)}
+              style={{
+                padding: '10px 20px',
+                backgroundColor: 'red',
+                color: '#fff',
+                border: 'none',
+                borderRadius: '20px',
+                cursor: 'pointer',
+              }}
+            >
               {t('orderForm.buttons.cancel')}
             </button>
           </div>
