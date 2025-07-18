@@ -108,12 +108,12 @@
 .feature-card h3 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
-  color: #ffffff; /* darker brown for headings */
+  color: #000000; /* darker brown for headings */
   text-shadow: 1px 1px 3px rgba(255, 241, 204, 0.6);
 }
 
 .feature-card p {
-  color: #f7f7f7;
+  color: #000000;
   line-height: 1.7;
   font-size: 1rem;
   text-shadow: 1px 1px 2px rgba(255, 241, 204, 0.5);
