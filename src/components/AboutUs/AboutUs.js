@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next'; // 👈 Import
 import './AboutUs.css';
 import logo2Image from '../../assets/logo.png';
 import ProfileImage1 from '../../assets/photo1.png';
-import ProfileImage2 from '../../assets/photo2.png';
+import ProfileImage2 from '../../assets/photo3.png';
 
 export const AboutUs = () => {
   const { t } = useTranslation(); // 👈 Hook

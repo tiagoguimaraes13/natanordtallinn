@@ -2,9 +2,9 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Coffee, Star, Users } from 'lucide-react'; // Changed icons to bakery-related
 import { Hero } from '../Hero/Hero';
-import backgroundVideo3 from '../../assets/background-video.mov'; // Replace with bakery videos
-import backgroundVideo4 from '../../assets/background-video.mov';
-import backgroundVideo5 from '../../assets/background-video.mov';
+import backgroundVideo3 from '../../assets/vid1.mp4'; // Replace with bakery videos
+import backgroundVideo4 from '../../assets/vid2.mp4';
+import backgroundVideo5 from '../../assets/vid3.mp4';
 import { useTranslation } from 'react-i18next';
 import './HomePage.css';
 
