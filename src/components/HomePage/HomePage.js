@@ -1,10 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Coffee, Star, Users } from 'lucide-react'; // Changed icons to bakery-related
+import { Coffee, Star, Users } from 'lucide-react';
 import { Hero } from '../Hero/Hero';
-import backgroundVideo3 from '../../assets/vid1.mp4'; // Replace with bakery videos
-import backgroundVideo4 from '../../assets/vid2.mp4';
-import backgroundVideo5 from '../../assets/vid3.mp4';
 import { useTranslation } from 'react-i18next';
 import './HomePage.css';
 
@@ -16,20 +13,20 @@ export const HomePage = () => {
       icon: <Coffee size={32} />,
       title: t('home.features.authenticTitle'),
       description: t('home.features.authenticDesc'),
-      video: backgroundVideo3
+      video: '/videos/vid1.mp4',
     },
     {
       icon: <Star size={32} />,
       title: t('home.features.cozyTitle'),
       description: t('home.features.cozyDesc'),
-      video: backgroundVideo4
+      video: '/videos/vid2.mp4',
     },
     {
       icon: <Users size={32} />,
       title: t('home.features.communityTitle'),
       description: t('home.features.communityDesc'),
-      video: backgroundVideo5
-    }
+      video: '/videos/vid3.mp4',
+    },
   ];
 
   const containerVariants = {
@@ -38,9 +35,9 @@ export const HomePage = () => {
       opacity: 1,
       transition: {
         duration: 0.6,
-        staggerChildren: 0.2
-      }
-    }
+        staggerChildren: 0.2,
+      },
+    },
   };
 
   const itemVariants = {
@@ -49,15 +46,15 @@ export const HomePage = () => {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.6
-      }
-    }
+        duration: 0.6,
+      },
+    },
   };
 
   return (
     <div className="homepage">
       <Hero />
-      
+
       <motion.main
         className="homepage-content"
         initial="hidden"
@@ -83,17 +80,16 @@ export const HomePage = () => {
                     className="feature-background-video"
                   >
                     <source src={feature.video} type="video/mp4" />
+                    Your browser does not support the video tag.
                   </video>
                 </div>
-                <motion.div 
+                <motion.div
                   className="feature-content"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.3 }}
                 >
-                  <div className="feature-icon">
-                    {feature.icon}
-                  </div>
+                  <div className="feature-icon">{feature.icon}</div>
                   <h3>{feature.title}</h3>
                   <p>{feature.description}</p>
                 </motion.div>
