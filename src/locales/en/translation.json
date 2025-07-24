@@ -34,7 +34,6 @@
     "allRightsReserved": "All rights reserved.",
     "builtBy": "This website was built by TG webdesign",
     "builtWithLove": "Built with ❤️ in Estonia"
-
   },
   "hero": {
     "welcome": "Welcome to Nata-Nord Tallinn",
@@ -88,63 +87,60 @@
     "orderButton": "Order Online",
     "seeDeliveryMap": "📍 See here our delivery map"
   },
-
-"orderForm": {
-  "labels": {
-    "name": "Name",
-    "email": "Email",
-    "phone": "Phone",
-    "natas": "Number of Natas",
-    "min": "min",
-    "deliveryLocation": "Delivery Location",
-    "deliveryDay": "Delivery Day",
-    "preferredTime": "Preferred Time",
-    "contactPreference": "Preferred Contact Method",
-    "contactMethod": "Preferred Contact Method",
-    "deliveryAddress": "Delivery Address"
+  "orderForm": {
+    "labels": {
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone",
+      "natas": "Number of Natas",
+      "min": "min",
+      "deliveryLocation": "Delivery Location",
+      "deliveryDay": "Delivery Day",
+      "preferredTime": "Preferred Time",
+      "contactPreference": "Preferred Contact Method",
+      "contactMethod": "Preferred Contact Method",
+      "deliveryAddress": "Delivery Address"
+    },
+    "errors": {
+      "invalidNatas": "Please enter a valid number of natas (1–500).",
+      "requiredFields": "Please fill in the required fields: name and email.",
+      "deliveryDetails": "Please specify the delivery day, time, and location.",
+      "sendFailed": "Failed to send the order. Please try again.",
+      "invalidEmail": "Please enter a valid email address.",
+      "invalidPhone": "Please enter a valid phone number (optional).",
+      "addressRequired": "Please provide a delivery address."
+    },
+    "placeholders": {
+      "phone": "Optional",
+      "preferredTime": "e.g., 14:00 - 16:00",
+      "deliveryAddress": "Street, building number, apartment (if applicable)",
+      "contactPreference": "Select email, phone or SMS"
+    },
+    "deliveryOptions": {
+      "inside": "Inside Tallinn",
+      "outside": "Outside Tallinn"
+    },
+    "contactMethods": {
+      "email": "Email",
+      "phone": "Phone",
+      "sms": "SMS"
+    },
+    "totalPrice": "Total Price",
+    "buttons": {
+      "sendOrder": "Send Order",
+      "confirm": "Confirm",
+      "edit": "Edit",
+      "confirmOrder": "Confirm Order",
+      "cancel": "Cancel"
+    },
+    "confirmationTitle": "Confirm Your Order",
+    "confirmation": {
+      "editNotice": "Please review the details below. You can edit them before confirming.",
+      "finalNote": "We’ll contact you to confirm your order and schedule the delivery time."
+    },
+    "successMessage": "Order sent successfully! We will contact you soon to confirm your order and arrange the delivery time."
   },
-  "errors": {
-    "invalidNatas": "Please enter a valid number of natas (1–500).",
-    "requiredFields": "Please fill in the required fields: name and email.",
-    "deliveryDetails": "Please specify the delivery day, time, and location.",
-    "sendFailed": "Failed to send the order. Please try again.",
-    "invalidEmail": "Please enter a valid email address.",
-    "invalidPhone": "Please enter a valid phone number (optional).",
-    "addressRequired": "Please provide a delivery address."
-  },
-  "placeholders": {
-    "phone": "Optional",
-    "preferredTime": "e.g., 14:00 - 16:00",
-    "deliveryAddress": "Street, building number, apartment (if applicable)",
-    "contactPreference": "Select email, phone or SMS"
-  },
-  "deliveryOptions": {
-    "inside": "Inside Tallinn",
-    "outside": "Outside Tallinn"
-  },
-  "contactMethods": {
-    "email": "Email",
-    "phone": "Phone",
-    "sms": "SMS"
-  },
-  "totalPrice": "Total Price",
-  "buttons": {
-    "sendOrder": "Send Order",
-    "confirm": "Confirm",
-    "edit": "Edit",
-    "confirmOrder": "Confirm Order",
-    "cancel": "Cancel"
-  },
-  "confirmationTitle": "Confirm Your Order",
-  "confirmation": {
-    "editNotice": "Please review the details below. You can edit them before confirming.",
-    "finalNote": "We’ll contact you to confirm your order and schedule the delivery time."
-  },
-  "successMessage": "Order sent successfully! We will contact you soon to confirm your order and arrange the delivery time."
-},
-
   "scrollToTop": "Scroll to top",
-  
   "privacyPolicy": {
     "title": "Privacy Policy",
     "intro": "Your privacy is important to us. This privacy policy explains how we collect, use, and protect your information.",
@@ -159,7 +155,6 @@
     "contactTitle": "Contact Us",
     "contactText": "If you have questions about this privacy policy, please contact us at privacy@nata-nord.ee."
   },
-  
   "termsOfService": {
     "title": "Terms of Service",
     "intro": "These terms govern your use of Nata-Nord Tallinn's services. By using our site, you agree to these terms.",
@@ -178,29 +173,27 @@
     "contactTitle": "Contact Us",
     "contactText": "For questions regarding these terms, contact natanord.tallinn@gmail.com"
   },
-"deliveryMap": {
-  "title": "Our Delivery Map",
-  "backToMenu": "Back to Menu",
-  "under20": {
-    "title": "Orders under 20 units:",
-    "cityCenter": "Delivery in Tallinn City Center: €2",
-    "outsideCenter": "Delivery in Tallinn outside City Center: €5",
-    "outsideTallinn": "Delivery outside Tallinn: Under Request"
+  "deliveryMap": {
+    "title": "Our Delivery Map",
+    "backToMenu": "Back to Menu",
+    "under20": {
+      "title": "Orders under 20 units:",
+      "cityCenter": "Delivery in Tallinn City Center: €2",
+      "outsideCenter": "Delivery in Tallinn outside City Center: €5",
+      "outsideTallinn": "Delivery outside Tallinn: Under Request"
+    },
+    "over20": {
+      "title": "Orders over 20 units:",
+      "cityCenter": "Delivery in Tallinn City Center: Free",
+      "outsideCenter": "Delivery in Tallinn outside City Center: €3",
+      "outsideTallinn": "Delivery outside Tallinn: Under Request"
+    }
   },
-  "over20": {
-    "title": "Orders over 20 units:",
-    "cityCenter": "Delivery in Tallinn City Center: Free",
-    "outsideCenter": "Delivery in Tallinn outside City Center: €3",
-    "outsideTallinn": "Delivery outside Tallinn: Under Request"
+  "loader": {
+    "welcome": {
+      "en": "Welcome to Nata-Nord Tallinn",
+      "et": "Tere tulemast Nata-Nord Tallinna",
+      "ru": "Добро пожаловать в Nata-Nord Таллинн"
+    }
   }
-},
-"loader": {
-  "welcome": {
-    "en": "Welcome to Nata-Nord Tallinn",
-    "et": "Tere tulemast Nata-Nord Tallinna",
-    "ru": "Добро пожаловать в Nata-Nord Таллинн"
-  }
-}
-
-
 }

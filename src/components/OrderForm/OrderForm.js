@@ -14,6 +14,7 @@ const OrderForm = () => {
     deliveryDay: '',
     preferredTime: '',
     contactMethod: '',
+    address: '', // NEW FIELD
   });
 
   const [totalPrice, setTotalPrice] = useState(0);
@@ -73,6 +74,7 @@ const OrderForm = () => {
       deliveryDay: formData.deliveryDay,
       preferredTime: formData.preferredTime,
       contactMethod: formData.contactMethod,
+      address: formData.address,
       total: totalPrice.toString(),
       confirmationMessage: `Dear ${formData.name},\n\nThank you for your order! We will contact you via ${formData.contactMethod || 'your preferred contact method'} to confirm your order and schedule the delivery time.\n\nPreferred payment is cash upon delivery, but we also accept bank transfers.\n\nBest regards,\nNata-Nord Tallinn Team`,
     };
@@ -96,6 +98,7 @@ const OrderForm = () => {
           deliveryDay: '',
           preferredTime: '',
           contactMethod: '',
+          address: '',
         });
         setTotalPrice(0);
         setShowConfirmation(false);
@@ -116,6 +119,7 @@ const OrderForm = () => {
       !formData.deliveryDay ||
       !formData.preferredTime ||
       !formData.contactMethod ||
+      !formData.address || // address validation
       isNaN(n) || n < 1 || n > 500
     ) {
       setStatusMessage(t('orderForm.errors.invalidNatas'));
@@ -211,6 +215,21 @@ const OrderForm = () => {
         </label>
 
         <label>
+  {t('orderForm.labels.deliveryAddress')}*:
+
+  <input
+    type="text"
+    name="address"
+    value={formData.address}
+    onChange={handleChange}
+    placeholder={t('')}
+    required
+    style={{ width: '100%', padding: '8px', margin: '5px 0' }}
+  />
+</label>
+
+
+        <label>
           {t('orderForm.labels.deliveryDay')}*:
           <input
             type="date"
@@ -237,9 +256,7 @@ const OrderForm = () => {
         </label>
 
         <p>
-          <strong>
-            {t('orderForm.totalPrice')}: €{totalPrice}
-          </strong>
+          <strong>{t('orderForm.totalPrice')}: €{totalPrice}</strong>
         </p>
 
         <button
@@ -281,35 +298,16 @@ const OrderForm = () => {
           }}
         >
           <h3>{t('orderForm.confirmationTitle')}</h3>
-          <p>
-            <strong>{t('orderForm.labels.name')}:</strong> {formData.name}
-          </p>
-          <p>
-            <strong>{t('orderForm.labels.email')}:</strong> {formData.email}
-          </p>
-          <p>
-            <strong>{t('orderForm.labels.phone')}:</strong> {formData.phone || '—'}
-          </p>
-          <p>
-            <strong>{t('orderForm.labels.contactPreference')}:</strong>{' '}
-            {t(`orderForm.contactMethods.${formData.contactMethod}`) || formData.contactMethod}
-          </p>
-          <p>
-            <strong>{t('orderForm.labels.natas')}:</strong> {formData.natas}
-          </p>
-          <p>
-            <strong>{t('orderForm.labels.deliveryLocation')}:</strong>{' '}
-            {t(`orderForm.deliveryOptions.${formData.delivery}`)}
-          </p>
-          <p>
-            <strong>{t('orderForm.labels.deliveryDay')}:</strong> {formData.deliveryDay}
-          </p>
-          <p>
-            <strong>{t('orderForm.labels.preferredTime')}:</strong> {formData.preferredTime}
-          </p>
-          <p>
-            <strong>{t('orderForm.totalPrice')}:</strong> €{totalPrice}
-          </p>
+          <p><strong>{t('orderForm.labels.name')}:</strong> {formData.name}</p>
+          <p><strong>{t('orderForm.labels.email')}:</strong> {formData.email}</p>
+          <p><strong>{t('orderForm.labels.phone')}:</strong> {formData.phone || '—'}</p>
+          <p><strong>{t('orderForm.labels.contactPreference')}:</strong> {t(`orderForm.contactMethods.${formData.contactMethod}`)}</p>
+          <p><strong>{t('orderForm.labels.natas')}:</strong> {formData.natas}</p>
+          <p><strong>{t('orderForm.labels.deliveryLocation')}:</strong> {t(`orderForm.deliveryOptions.${formData.delivery}`)}</p>
+          <p><strong>{t('orderForm.labels.address')}:</strong> {formData.address}</p>
+          <p><strong>{t('orderForm.labels.deliveryDay')}:</strong> {formData.deliveryDay}</p>
+          <p><strong>{t('orderForm.labels.preferredTime')}:</strong> {formData.preferredTime}</p>
+          <p><strong>{t('orderForm.totalPrice')}:</strong> €{totalPrice}</p>
 
           <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '15px' }}>
             <button
