@@ -215,19 +215,17 @@ const OrderForm = () => {
         </label>
 
         <label>
-  {t('orderForm.labels.deliveryAddress')}*:
-
-  <input
-    type="text"
-    name="address"
-    value={formData.address}
-    onChange={handleChange}
-    placeholder={t('')}
-    required
-    style={{ width: '100%', padding: '8px', margin: '5px 0' }}
-  />
-</label>
-
+          {t('orderForm.labels.deliveryAddress')}*:
+          <input
+            type="text"
+            name="address"
+            value={formData.address}
+            onChange={handleChange}
+            placeholder={t('orderForm.placeholders.deliveryAddress')}
+            required
+            style={{ width: '100%', padding: '8px', margin: '5px 0' }}
+          />
+        </label>
 
         <label>
           {t('orderForm.labels.deliveryDay')}*:
@@ -304,7 +302,7 @@ const OrderForm = () => {
           <p><strong>{t('orderForm.labels.contactPreference')}:</strong> {t(`orderForm.contactMethods.${formData.contactMethod}`)}</p>
           <p><strong>{t('orderForm.labels.natas')}:</strong> {formData.natas}</p>
           <p><strong>{t('orderForm.labels.deliveryLocation')}:</strong> {t(`orderForm.deliveryOptions.${formData.delivery}`)}</p>
-          <p><strong>{t('orderForm.labels.address')}:</strong> {formData.address}</p>
+          <p><strong>{t('orderForm.labels.deliveryAddress')}:</strong> {formData.address}</p>
           <p><strong>{t('orderForm.labels.deliveryDay')}:</strong> {formData.deliveryDay}</p>
           <p><strong>{t('orderForm.labels.preferredTime')}:</strong> {formData.preferredTime}</p>
           <p><strong>{t('orderForm.totalPrice')}:</strong> €{totalPrice}</p>
