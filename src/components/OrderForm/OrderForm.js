@@ -14,7 +14,7 @@ const OrderForm = () => {
     deliveryDay: '',
     preferredTime: '',
     contactMethod: '',
-    address: '', // NEW FIELD
+    address: '',
   });
 
   const [totalPrice, setTotalPrice] = useState(0);
@@ -29,13 +29,15 @@ const OrderForm = () => {
       return;
     }
 
-    let pricePerUnit = n >= 11 ? 1 : 1.25;
+    // ✅ Always €1 per unit
+    const pricePerUnit = 1;
 
+    // ✅ Fixed delivery cost rules
     let deliveryCost = 0;
     if (formData.delivery === 'inside') {
-      deliveryCost = n < 20 ? 2 : 0;
+      deliveryCost = 2.0;
     } else {
-      deliveryCost = n < 20 ? 5 : 3;
+      deliveryCost = 5.0;
     }
 
     const total = n * pricePerUnit + deliveryCost;
@@ -56,7 +58,7 @@ const OrderForm = () => {
   const handleBlur = (e) => {
     if (e.target.name === 'natas') {
       let n = parseInt(formData.natas, 10);
-      if (isNaN(n) || n < 1) n = 1;
+      if (isNaN(n) || n < 50) n = 50; // ✅ Minimum order 50 units
       else if (n > 500) n = 500;
       setFormData((prev) => ({ ...prev, natas: n.toString() }));
     }
@@ -119,8 +121,8 @@ const OrderForm = () => {
       !formData.deliveryDay ||
       !formData.preferredTime ||
       !formData.contactMethod ||
-      !formData.address || // address validation
-      isNaN(n) || n < 1 || n > 500
+      !formData.address ||
+      isNaN(n) || n < 50 || n > 500
     ) {
       setStatusMessage(t('orderForm.errors.invalidNatas'));
       setStatusSuccess(false);
@@ -186,14 +188,14 @@ const OrderForm = () => {
         </label>
 
         <label>
-          {t('orderForm.labels.natas')}* ({t('orderForm.labels.min')}):
+          {t('orderForm.labels.natas')}* ({t('orderForm.labels.min')} 50):
           <input
             type="number"
             name="natas"
             value={formData.natas}
             onChange={handleChange}
             onBlur={handleBlur}
-            min={1}
+            min={50}
             max={500}
             required
             style={{ width: '100%', padding: '8px', margin: '5px 0' }}

@@ -67,26 +67,23 @@
     "viewLargerMap": "Посмотреть карту в большем размере",
     "getDirections": "Как добраться"
   },
-  "menu": {
-    "title": "Наше меню Ната",
+"menu": {
+    "title": "Наше меню Натас",
     "pricingTitle": "Цены",
     "minOrderLabel": "Минимальный заказ",
-    "minOrderUnits": "6 штук",
-    "priceRange1": "6–10 штук",
-    "price1": "1.25€ за штуку",
-    "priceRange2": "11+ штук",
-    "price2": "1.00€ за штуку",
+    "minOrderUnits": "50 штук",
+    "priceRange1": "Цена",
+    "price1": "1€ за штуку",
     "deliveryTitle": "Доставка",
-    "deliveryCityCenter": "Доставка в центре Таллинна",
-    "deliveryCityCenterPrice": "2.00€",
-    "freeDeliveryThreshold": "Бесплатная доставка для заказов свыше 20 штук.",
-    "deliveryOutside": "Доставка за пределы центра Таллинна",
-    "deliveryOutsidePrice": "5.00€",
-    "deliveryOutsideDiscount": "Доставка за пределы центра Таллинна для заказов свыше 20 штук",
-    "deliveryOutsideDiscountPrice": "3.00€",
+    "deliveryCityCenter": "Доставка в центр Таллина",
+    "deliveryCityCenterPrice": "2,00€",
+    "deliveryOutside": "Доставка за пределы центра Таллина",
+    "deliveryOutsidePrice": "5,00€",
+    "deliveryOutsideDiscountPrice": "3,00€",
     "orderButton": "Заказать онлайн",
-    "seeDeliveryMap": "📍 Посмотрите здесь нашу карту доставки"
-  },
+    "seeDeliveryMap": "📍 Смотрите здесь нашу карту доставки"
+},
+
   "orderForm": {
     "labels": {
       "name": "Имя",
@@ -173,13 +170,13 @@
     "contactTitle": "Связаться с нами",
     "contactText": "Если у вас есть вопросы по этим условиям, напишите нам на natanord.tallinn@gmail.com"
   },
-  "deliveryMap": {
+"deliveryMap": {
     "title": "Наша карта доставки",
     "backToMenu": "Назад в меню",
     "under20": {
-      "title": "Заказы до 20 штук:",
-      "cityCenter": "Доставка в центр Таллина: 2€",
-      "outsideCenter": "Доставка за пределы центра Таллина: 5€",
+      "title": "Заказы:",
+      "cityCenter": "Доставка в центр Таллина: 2 €",
+      "outsideCenter": "Доставка по Таллину за пределами центра: 5 €",
       "outsideTallinn": "Доставка за пределы Таллина: по запросу"
     },
     "over20": {

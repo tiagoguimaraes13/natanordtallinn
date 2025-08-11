@@ -31,13 +31,6 @@ export const DeliveryMap = () => {
             <li>🟥 {t("deliveryMap.under20.outsideCenter")}</li>
             <li>📍 {t("deliveryMap.under20.outsideTallinn")}</li>
           </ul>
-
-          <h2>{t("deliveryMap.over20.title")}</h2>
-          <ul>
-            <li>🟩 {t("deliveryMap.over20.cityCenter")}</li>
-            <li>🟥 {t("deliveryMap.over20.outsideCenter")}</li>
-            <li>📍 {t("deliveryMap.over20.outsideTallinn")}</li>
-          </ul>
         </div>
       </div>
     </div>

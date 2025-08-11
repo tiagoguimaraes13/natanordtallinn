@@ -32,17 +32,14 @@ const Menu = () => {
         <ul>
           <li>📦 <strong>{t('menu.minOrderLabel')}:</strong> {t('menu.minOrderUnits')}</li>
           <li>🥮 {t('menu.priceRange1')}: <strong>{t('menu.price1')}</strong></li>
-          <li>🥮 {t('menu.priceRange2')}: <strong>{t('menu.price2')}</strong></li>
         </ul>
 
         <h2>{t('menu.deliveryTitle')}</h2>
         <ul>
           <li>
             🚚 {t('menu.deliveryCityCenter')}: <strong>{t('menu.deliveryCityCenterPrice')}</strong><br />
-            🎉 {t('menu.freeDeliveryThreshold')}
           </li>
           <li>🚚 {t('menu.deliveryOutside')}: <strong>{t('menu.deliveryOutsidePrice')}</strong></li>
-          <li>{t('menu.deliveryOutsideDiscount')} <strong>{t('menu.deliveryOutsideDiscountPrice')}</strong></li>
         </ul>
 
         {/* Delivery Map Link */}

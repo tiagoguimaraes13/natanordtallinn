@@ -71,18 +71,14 @@
     "title": "Our Natas Menu",
     "pricingTitle": "Pricing",
     "minOrderLabel": "Minimum order",
-    "minOrderUnits": "6 units",
-    "priceRange1": "6–10 units",
-    "price1": "1.25€ per unit",
-    "priceRange2": "11+ units",
-    "price2": "1.00€ per unit",
+    "minOrderUnits": "50 units",
+    "priceRange1": "Price",
+    "price1": "1€ per unit",
     "deliveryTitle": "Delivery",
     "deliveryCityCenter": "Delivery in Tallinn City Center",
     "deliveryCityCenterPrice": "2.00€",
-    "freeDeliveryThreshold": "Free delivery for orders over 20 units.",
     "deliveryOutside": "Delivery outside Tallinn City Center",
     "deliveryOutsidePrice": "5.00€",
-    "deliveryOutsideDiscount": "Delivery outside Tallinn City Center for orders over 20 units",
     "deliveryOutsideDiscountPrice": "3.00€",
     "orderButton": "Order Online",
     "seeDeliveryMap": "📍 See here our delivery map"
@@ -102,7 +98,7 @@
       "deliveryAddress": "Delivery Address"
     },
     "errors": {
-      "invalidNatas": "Please enter a valid number of natas (1–500).",
+      "invalidNatas": "Please enter a valid number of natas (50–500).",
       "requiredFields": "Please fill in the required fields: name and email.",
       "deliveryDetails": "Please specify the delivery day, time, and location.",
       "sendFailed": "Failed to send the order. Please try again.",
@@ -177,15 +173,9 @@
     "title": "Our Delivery Map",
     "backToMenu": "Back to Menu",
     "under20": {
-      "title": "Orders under 20 units:",
+      "title": "Orders:",
       "cityCenter": "Delivery in Tallinn City Center: €2",
       "outsideCenter": "Delivery in Tallinn outside City Center: €5",
-      "outsideTallinn": "Delivery outside Tallinn: Under Request"
-    },
-    "over20": {
-      "title": "Orders over 20 units:",
-      "cityCenter": "Delivery in Tallinn City Center: Free",
-      "outsideCenter": "Delivery in Tallinn outside City Center: €3",
       "outsideTallinn": "Delivery outside Tallinn: Under Request"
     }
   },

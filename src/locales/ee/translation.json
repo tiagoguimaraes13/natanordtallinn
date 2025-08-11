@@ -71,11 +71,9 @@
     "title": "Meie Nata Menüü",
     "pricingTitle": "Hinnakiri",
     "minOrderLabel": "Minimaalne tellimus",
-    "minOrderUnits": "6 ühikut",
-    "priceRange1": "6–10 ühikut",
-    "price1": "1.25€ ühiku kohta",
-    "priceRange2": "11+ ühikut",
-    "price2": "1.00€ ühiku kohta",
+    "minOrderUnits": "50 ühikut",
+    "priceRange1": "Hind",
+    "price1": "1€ ühiku kohta",
     "deliveryTitle": "Kohaletoimetamine",
     "deliveryCityCenter": "Kohaletoimetamine Tallinna kesklinnas",
     "deliveryCityCenterPrice": "2.00€",
@@ -173,14 +171,14 @@
     "contactTitle": "Võtke meiega ühendust",
     "contactText": "Kui teil on küsimusi nende tingimuste kohta, võtke ühendust aadressil natanord.tallinn@gmail.com"
   },
-  "deliveryMap": {
-    "title": "Meie kohaletoimetamise kaart",
+"deliveryMap": {
+    "title": "Meie tarnekaart",
     "backToMenu": "Tagasi menüüsse",
     "under20": {
-      "title": "Tellimused alla 20 ühiku:",
-      "cityCenter": "Tallinna kesklinna kohaletoomine: 2€",
-      "outsideCenter": "Tallinna äärelinna kohaletoomine: 5€",
-      "outsideTallinn": "Tallinnast väljaspool: kokkuleppel"
+      "title": "Tellimused:",
+      "cityCenter": "Kohaletoimetamine Tallinna kesklinnas: 2 €",
+      "outsideCenter": "Kohaletoimetamine Tallinnas väljaspool kesklinna: 5 €",
+      "outsideTallinn": "Kohaletoimetamine väljaspool Tallinna: kokkuleppel"
     },
     "over20": {
       "title": "Tellimused üle 20 ühiku:",
